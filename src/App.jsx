@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Layout from './containers/Layout/Layout';
+import Home from './containers/Home/Home';
 import './App.css';
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
     <div className="App">
       <Layout>
         <Switch>
-          <Route path="/" render={() => <h1>Home Page</h1>} />
+          <Route path="/" component={Home} />
         </Switch>
       </Layout>
     </div>
