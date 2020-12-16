@@ -49,6 +49,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
+  cursor: pointer;
 }
 
 .section3 {
@@ -60,6 +61,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
+  cursor: pointer;
 }
 
 .tagName {
@@ -82,6 +84,7 @@
   background-image: url("../../../assets/Tshirt-design.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  cursor: pointer;
 }
 
 .jeans {
@@ -89,4 +92,5 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
+  cursor: pointer;
 }
