@@ -13,6 +13,9 @@ const ToolBar = ({ drawerToggleClicked }) => (
     <div className={classNames.SearchBar}>
       <SearchBar />
     </div>
+    <div className={classNames.login}>
+      Login / Sign Up
+    </div>
   </header>
 );
 

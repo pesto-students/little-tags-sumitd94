@@ -1,0 +1,34 @@
+.Categories {
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  width: 200px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 16px;
+}
+
+.heading {
+  font-family: ProximaNova;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.19;
+  letter-spacing: 0.67px;
+  text-align: center;
+  color: #f9f9f9;
+  padding: 24px 0;
+}
+
+.category {
+  font-family: ProximaNova;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 0.53px;
+  text-align: left;
+  color: #6f6f6f;
+}

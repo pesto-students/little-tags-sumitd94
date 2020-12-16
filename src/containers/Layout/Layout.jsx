@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from './Layout.module.css';
 import ToolBar from '../../components/Navigation/ToolBar/ToolBar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
+import Footer from '../../components/Navigation/Footer/Footer';
 
 const Layout = ({ children }) => {
   const [state, setState] = useState({ showSideDrawer: false });
@@ -25,6 +26,7 @@ const Layout = ({ children }) => {
       <main className={classNames.content}>
         {children}
       </main>
+      <Footer />
     </>
 
   );
