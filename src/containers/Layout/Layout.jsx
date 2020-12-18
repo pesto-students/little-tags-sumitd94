@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+/* eslint-disable no-shadow */
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import classNames from './Layout.module.css';
 import ToolBar from '../../components/Navigation/ToolBar/ToolBar';
@@ -10,6 +12,11 @@ import Login from '../../components/Auth/Login/Login';
 const Layout = ({ children }) => {
   const [state, setState] = useState({ showSideDrawer: false });
   const [showModal, setShowModal] = useState(false);
+
+  const firstTime = useSelector((state) => state.authentication.firstTime);
+  useEffect(() => {
+    setShowModal(firstTime);
+  }, []);
 
   const sideDrawerClosedHandler = () => {
     setState({ showSideDrawer: false });

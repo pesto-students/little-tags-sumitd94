@@ -1,7 +1,12 @@
 import userConstants from '../_constants/user.constants';
 
-const user = JSON.parse(localStorage.getItem('user'));
-const initialState = user ? { loggedIn: true, user } : {};
+const user = localStorage.getItem('littleTags');
+let initialState = { firstTime: true };
+if (user) {
+  initialState = { firstTime: false };
+} else {
+  localStorage.setItem('littleTags', JSON.stringify({ visited: 'yes' }));
+}
 
 function authentication(state = initialState, action) {
   console.log('authcalled', action);
