@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import classNames from './Login.module.css';
 import LoginMethod from './LoginMethod/LoginMethod';
 import userActions from '../../../_actions/user.actions';
+import { signInWithGoogle } from '../../../services/firebase';
 
 const Login = () => {
   const [inputs] = useState({
@@ -31,8 +32,8 @@ const Login = () => {
         Log in / Sign up using your
       </div>
       <button onClick={(e) => handleSubmit(e)} type="button">Check</button>
-      <LoginMethod text="Google Account" type="Google" />
-      <LoginMethod text="Facebook Account" type="Facebook" />
+      <LoginMethod text="Google Account" type="Google" click={signInWithGoogle} />
+      <LoginMethod text="Facebook Account" type="Facebook" click={() => {}} />
     </div>
   );
 };
