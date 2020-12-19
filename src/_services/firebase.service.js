@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import dotenv from 'dotenv';
 import firebase from 'firebase/app';
 import 'firebase/auth';
@@ -16,12 +15,18 @@ firebase.initializeApp({
   measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 });
 
-const auth = firebase.auth();
-const googleProvider = new firebase.auth.GoogleAuthProvider();
-export const signInWithGoogle = () => {
+// it will directly validate with firebase on render
+// we need validate on click
+// const auth = firebase.auth();
+// const googleProvider = new firebase.auth.GoogleAuthProvider();
+const signInWithGoogle = () => {
+  const auth = firebase.auth();
+  const googleProvider = new firebase.auth.GoogleAuthProvider();
   auth.signInWithPopup(googleProvider).then((res) => {
     console.log(res.user);
   }).catch((error) => {
     console.log(error.message);
   });
 };
+
+export default signInWithGoogle;

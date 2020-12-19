@@ -9,7 +9,6 @@ if (user) {
 }
 
 function authentication(state = initialState, action) {
-  console.log('authcalled', action);
   switch (action.type) {
     case userConstants.LOGIN_REQUEST:
       return {
@@ -17,7 +16,6 @@ function authentication(state = initialState, action) {
         user: action.user,
       };
     case userConstants.LOGIN_SUCCESS:
-      console.log('aahi', action);
       return {
         loggedIn: true,
         user: action.user,
