@@ -12,7 +12,6 @@ function getAllProducts() {
       productLists = await productService.getAllProduct();
       dispatch({ type: productConstants.GETALL, productList: productLists });
     } catch (err) {
-      console.log('err', err);
       dispatch(alertActions.error(err));
     }
   };

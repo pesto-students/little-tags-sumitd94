@@ -8,7 +8,7 @@ function products(state = initialState, action) {
   switch (action.type) {
     case productConstants.GETALL:
       return {
-        allproducts: action.productsList,
+        allproducts: action.productList,
       };
     default:
       return state;
