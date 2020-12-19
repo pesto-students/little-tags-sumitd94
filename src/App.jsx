@@ -28,8 +28,8 @@ function App() {
         </div>
         <Layout>
           <Switch>
-            <Route path="/category/:categoryname" component={CategoryProducts} />
-            <Route path="/" component={Home} />
+            <Route path="/products/:categoryname" exact component={CategoryProducts} />
+            <Route path="/" exact component={Home} />
           </Switch>
         </Layout>
       </div>
