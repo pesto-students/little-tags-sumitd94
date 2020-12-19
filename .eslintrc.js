@@ -20,6 +20,7 @@ module.exports = {
   rules: {
     'linebreak-style': 'off',
     'no-console': 'off',
+    'operator-linebreak': 'off',
   },
   overrides: [
     {

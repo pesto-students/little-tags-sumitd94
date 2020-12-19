@@ -1,8 +1,7 @@
 import { userConstants } from '../_constants';
-
-const userService = {
-  login: () => new Promise((resolve) => resolve(true)),
-};
+import alertActions from './alert.actions';
+import { history } from '../_helpers';
+import { userService } from '../_services';
 
 function login(username, password) {
   return (dispatch) => {
@@ -10,11 +9,11 @@ function login(username, password) {
     return userService.login(username, password)
       .then(
         (user) => {
-          console.log('hi');
+          dispatch(alertActions.success('Logged In'));
           dispatch({ type: userConstants.LOGIN_SUCCESS, user });
         },
         (error) => {
-          console.log(error);
+          history.push('/');
           dispatch({ type: userConstants.LOGIN_SUCCESS, error });
         },
       );

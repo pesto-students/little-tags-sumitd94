@@ -1,5 +1,7 @@
 import store from './store';
+import history from './history';
 
-export default {
+export {
   store,
+  history,
 };

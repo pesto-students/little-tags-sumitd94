@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import classNames from './Login.module.css';
 import LoginMethod from './LoginMethod/LoginMethod';
 import userActions from '../../../_actions/user.actions';
-import signInWithGoogle from '../../../_services';
+import { signInWithGoogle } from '../../../_services';
 
 const Login = () => {
   const [inputs] = useState({
