@@ -14,6 +14,7 @@ const Layout = ({ children }) => {
   const [showModal, setShowModal] = useState(false);
 
   const firstTime = useSelector((state) => state.authentication.firstTime);
+
   useEffect(() => {
     setShowModal(firstTime);
   }, []);
