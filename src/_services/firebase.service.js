@@ -29,4 +29,6 @@ const signInWithGoogle = () => new Promise((resolve, reject) => {
   });
 });
 
-export default signInWithGoogle;
+const logoutGoogle = () => firebase.auth().signOut();
+
+export { signInWithGoogle, logoutGoogle };

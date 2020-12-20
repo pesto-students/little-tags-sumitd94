@@ -1,5 +1,9 @@
 import userConstants from '../_constants/user.constants';
 
+function setForFirstTime() {
+  localStorage.setItem('littleTags', JSON.stringify({ visited: 'yes' }));
+}
+
 const user = localStorage.getItem('littleTags');
 let initialState = { firstTime: true };
 if (user) {
@@ -8,7 +12,7 @@ if (user) {
     firstTime: false,
   };
 } else {
-  localStorage.setItem('littleTags', JSON.stringify({ visited: 'yes' }));
+  setForFirstTime();
 }
 
 // check loggedin state
@@ -24,6 +28,12 @@ function manageSuccessLogin(data) {
   localStorage.setItem('loggedIn', data.loggedIn);
   localStorage.setItem('user', JSON.stringify(data.user));
   return data;
+}
+
+function manageLogout() {
+  localStorage.clear();
+  setForFirstTime();
+  return {};
 }
 
 function authentication(state = initialState, action) {
@@ -45,7 +55,7 @@ function authentication(state = initialState, action) {
     case userConstants.LOGIN_FAILURE:
       return {};
     case userConstants.LOGOUT:
-      return {};
+      return manageLogout();
     default:
       return state;
   }
