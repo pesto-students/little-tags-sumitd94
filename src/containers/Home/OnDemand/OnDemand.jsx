@@ -17,17 +17,17 @@ const OnDemand = (props) => {
       </div>
       <div className={classNames.demandSections}>
         <div className={classNames.section1}>
-          <div className={classNames.tshirt} onClick={() => redirectHandler('t-shirt')}>
+          <div className={classNames.tshirt} onClick={() => redirectHandler('men-clothing')}>
             <p className={classNames.tagName}>T Shirt</p>
           </div>
-          <div className={classNames.jeans} onClick={() => redirectHandler('jeans')}>
+          <div className={classNames.jeans} onClick={() => redirectHandler('women-clothing')}>
             <p className={classNames.tagName}>Jeans</p>
           </div>
         </div>
         <div className={classNames.section2} onClick={() => redirectHandler('backpack')}>
           <p className={classNames.tagName}>Backpack</p>
         </div>
-        <div className={classNames.section3} onClick={() => redirectHandler('accessories')}>
+        <div className={classNames.section3} onClick={() => redirectHandler('electronics')}>
           <p className={classNames.tagName}>Accessories</p>
         </div>
       </div>
