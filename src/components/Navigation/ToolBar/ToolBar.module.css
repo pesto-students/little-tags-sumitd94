@@ -21,7 +21,11 @@
   line-height: 1.2;
   letter-spacing: normal;
   color: white;
-  display: none;
+  display: none;  
+}
+
+.logo a {
+  text-decoration: none;
 }
 
 .SearchBar {

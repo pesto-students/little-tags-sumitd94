@@ -1,14 +1,17 @@
 import { productConstants } from '../_constants';
 
 const initialState = {
-  allproducts: [],
+  allproducts: {},
 };
 
 function products(state = initialState, action) {
   switch (action.type) {
     case productConstants.GETALL:
       return {
-        allproducts: action.productList,
+        allproducts: {
+          ...state.allproducts,
+          [action.category]: action.productList,
+        },
       };
     default:
       return state;

@@ -18,7 +18,6 @@ const Login = () => {
   console.log(loggedIn);
 
   function handleSubmit(e) {
-    console.log('handlesubmit');
     e.preventDefault();
     dispatch(userActions.login(username, password));
   }

@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from './ToolBar.module.css';
 import SearchBar from './SearchBar/SearchBar';
@@ -10,7 +11,7 @@ const ToolBar = ({ drawerToggleClicked, toggleModalHandler }) => (
   <header className={classNames.ToolBar}>
     <DrawerToggle clicked={drawerToggleClicked} />
     <div className={classNames.logo}>
-      Little Tags
+      <Link to="/"> Little Tags </Link>
     </div>
     <div className={classNames.SearchBar}>
       <SearchBar />

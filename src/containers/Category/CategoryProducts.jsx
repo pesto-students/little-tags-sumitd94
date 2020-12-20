@@ -6,11 +6,12 @@ import { productActions } from '../../_actions';
 const CategoryProducts = () => {
   const { categoryname } = useParams();
   const dispatch = useDispatch();
-  const allproducts = useSelector((state) => state.products.allproducts);
+  const products = useSelector((state) => state.products.allproducts);
 
   useEffect(() => {
-    dispatch(productActions.getAllProducts());
-    console.log('cate', categoryname);
+    if (!(categoryname.toString() in products)) {
+      dispatch(productActions.getAllProducts(categoryname));
+    }
   }, []);
 
   return (
@@ -21,7 +22,7 @@ const CategoryProducts = () => {
           {categoryname}
         </h2>
         <ul>
-          { allproducts.length > 0 && allproducts.map((el) => (
+          { categoryname in products && products[categoryname].map((el) => (
             <li>{`${el.category} - ${el.title}`}</li>
           ))}
         </ul>
