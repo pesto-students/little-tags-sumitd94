@@ -12,8 +12,8 @@ import Login from '../../components/Auth/Login/Login';
 const Layout = ({ children }) => {
   const [state, setState] = useState({ showSideDrawer: false });
   const [showModal, setShowModal] = useState(false);
-
   const firstTime = useSelector((state) => state.authentication.firstTime);
+  const loggedIn = useSelector((state) => state.authentication.loggedIn);
 
   useEffect(() => {
     setShowModal(firstTime);
@@ -42,9 +42,11 @@ const Layout = ({ children }) => {
         closed={sideDrawerClosedHandler}
       />
       <main className={classNames.content}>
-        <Modal show={showModal} modalClosed={toggleModalHandler}>
-          <Login />
-        </Modal>
+        { loggedIn === false && (
+          <Modal show={showModal} modalClosed={toggleModalHandler}>
+            <Login />
+          </Modal>
+        )}
         {children}
       </main>
       <Footer />

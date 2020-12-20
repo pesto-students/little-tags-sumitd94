@@ -19,14 +19,14 @@ firebase.initializeApp({
 // we need validate on click
 // const auth = firebase.auth();
 // const googleProvider = new firebase.auth.GoogleAuthProvider();
-const signInWithGoogle = () => {
+const signInWithGoogle = () => new Promise((resolve, reject) => {
   const auth = firebase.auth();
   const googleProvider = new firebase.auth.GoogleAuthProvider();
   auth.signInWithPopup(googleProvider).then((res) => {
-    console.log(res.user.displayName);
+    resolve(res);
   }).catch((error) => {
-    console.log(error.message);
+    reject(new Error(error.message));
   });
-};
+});
 
 export default signInWithGoogle;

@@ -1,25 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import classNames from './Login.module.css';
 import LoginMethod from './LoginMethod/LoginMethod';
 import userActions from '../../../_actions/user.actions';
-import { signInWithGoogle } from '../../../_services';
 
 const Login = () => {
-  const [inputs] = useState({
-    username: 'test',
-    password: 'test',
-  });
-
-  const { username, password } = inputs;
   const dispatch = useDispatch();
   const loggedIn = useSelector((state) => state.authentication.loggedIn);
 
   console.log(loggedIn);
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    dispatch(userActions.login(username, password));
+  function handleSubmit(type) {
+    dispatch(userActions.login(type));
   }
 
   return (
@@ -30,8 +22,7 @@ const Login = () => {
       <div className={classNames.subHeading}>
         Log in / Sign up using your
       </div>
-      <button onClick={(e) => handleSubmit(e)} type="button">Check</button>
-      <LoginMethod text="Google Account" type="Google" click={signInWithGoogle} />
+      <LoginMethod text="Google Account" type="Google" click={() => handleSubmit('google')} />
       <LoginMethod text="Facebook Account" type="Facebook" click={() => ''} />
     </div>
   );

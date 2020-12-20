@@ -1,7 +1,7 @@
 import userConstants from '../_constants/user.constants';
 
 const user = localStorage.getItem('littleTags');
-let initialState = { firstTime: true, loggedIn: false };
+let initialState = { firstTime: true };
 if (user) {
   initialState = {
     ...initialState,
@@ -9,6 +9,21 @@ if (user) {
   };
 } else {
   localStorage.setItem('littleTags', JSON.stringify({ visited: 'yes' }));
+}
+
+// check loggedin state
+const userLoggedinStatus = localStorage.getItem('loggedIn') && localStorage.getItem('user');
+if (userLoggedinStatus) {
+  initialState.loggedIn = true;
+  initialState.user = JSON.parse(localStorage.getItem('user'));
+} else {
+  initialState.loggedIn = false;
+}
+
+function manageSuccessLogin(data) {
+  localStorage.setItem('loggedIn', data.loggedIn);
+  localStorage.setItem('user', JSON.stringify(data.user));
+  return data;
 }
 
 function authentication(state = initialState, action) {
@@ -19,10 +34,14 @@ function authentication(state = initialState, action) {
         user: action.user,
       };
     case userConstants.LOGIN_SUCCESS:
-      return {
+      return manageSuccessLogin({
         loggedIn: true,
-        user: action.user,
-      };
+        user: {
+          email: action.user.email,
+          uid: action.user.uid,
+          displayName: action.user.displayName,
+        },
+      });
     case userConstants.LOGIN_FAILURE:
       return {};
     case userConstants.LOGOUT:
