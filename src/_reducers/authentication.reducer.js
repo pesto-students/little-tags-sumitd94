@@ -1,9 +1,12 @@
 import userConstants from '../_constants/user.constants';
 
 const user = localStorage.getItem('littleTags');
-let initialState = { firstTime: true };
+let initialState = { firstTime: true, loggedIn: false };
 if (user) {
-  initialState = { firstTime: false };
+  initialState = {
+    ...initialState,
+    firstTime: false,
+  };
 } else {
   localStorage.setItem('littleTags', JSON.stringify({ visited: 'yes' }));
 }

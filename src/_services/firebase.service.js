@@ -23,7 +23,7 @@ const signInWithGoogle = () => {
   const auth = firebase.auth();
   const googleProvider = new firebase.auth.GoogleAuthProvider();
   auth.signInWithPopup(googleProvider).then((res) => {
-    console.log(res.user);
+    console.log(res.user.displayName);
   }).catch((error) => {
     console.log(error.message);
   });

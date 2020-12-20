@@ -1,7 +1,6 @@
 const baseUrl = 'https://fakestoreapi.com/products';
 
 const productService = {
-
   getAllProduct() {
     return new Promise((resolve, reject) => {
       fetch(baseUrl, {

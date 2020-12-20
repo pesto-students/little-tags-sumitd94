@@ -94,3 +94,8 @@
   background-position: right;
   cursor: pointer;
 }
+
+.tagName a {
+  text-decoration: none;
+  color: white;
+}

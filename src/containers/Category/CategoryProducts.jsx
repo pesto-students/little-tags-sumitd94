@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { productActions } from '../../_actions';
+import classNames from './CategoryProducts.module.css';
+import Product from './Product/Product';
 
 const CategoryProducts = () => {
   const { categoryname } = useParams();
@@ -14,16 +16,20 @@ const CategoryProducts = () => {
     }
   }, []);
 
+  console.log('test');
   return (
     <>
-      <div className="product_list">
+      <div className={classNames.productLists}>
         <h2>
-          Category :&nbsp;
-          {categoryname}
+          All
+          {' '}
+          { categoryname }
         </h2>
         <ul>
-          { categoryname in products && products[categoryname].map((el) => (
-            <li>{`${el.category} - ${el.title}`}</li>
+          {categoryname in products && products[categoryname].map((product) => (
+            <li key={product.id}>
+              <Product product={product} />
+            </li>
           ))}
         </ul>
       </div>
