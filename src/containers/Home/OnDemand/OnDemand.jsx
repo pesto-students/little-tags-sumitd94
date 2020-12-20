@@ -7,6 +7,7 @@ import classNames from './OnDemand.module.css';
 
 const OnDemand = (props) => {
   const redirectHandler = (category) => {
+    window.scrollTo(0, 0);
     props.history.push(`/products/${category}`);
   };
 
