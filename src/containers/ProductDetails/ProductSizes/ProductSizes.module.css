@@ -1,0 +1,23 @@
+.productSizesContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 8px;
+}
+
+.sizeBlock {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0px 8px;
+  padding: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.sizeBlock:hover {
+  background-color: black;
+  color: white;
+}
+
+.sizeBlock:first-child {
+  margin-left: 0px;
+}

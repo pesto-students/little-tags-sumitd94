@@ -1,0 +1,14 @@
+.CartButton {
+  background-color: black;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin: 16px 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.CartButton svg {
+  padding: 0;
+  padding-right: 8px;
+}

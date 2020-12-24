@@ -57,3 +57,12 @@
   height: 11%;
   margin-bottom: 32px;
 }
+
+.logoutBtn {
+  cursor: pointer;
+  width: 60%;
+  margin: auto;
+  padding: 16px;
+  background-color: lightgray;
+  border-radius: 15px;
+}

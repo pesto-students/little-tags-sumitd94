@@ -28,7 +28,7 @@ const CategoryProducts = () => {
         <ul>
           {categoryname in products && products[categoryname].map((product) => (
             <li key={product.id}>
-              <Product product={product} />
+              <Product product={product} categoryname={categoryname} />
             </li>
           ))}
         </ul>

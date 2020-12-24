@@ -1,0 +1,31 @@
+.productDetailsContainer {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: auto;
+  align-items: center;
+  height: 450px;
+  text-align: left;
+}
+
+.productImage {
+  height: 80%;
+  width: 40%;
+}
+
+.productImage img {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.productDetails {
+  text-align: left;
+  height: 80%;
+  margin: 0px 16px;
+  width: 50%;
+}
+
+.productDetails p {
+  margin: 16px 0px;
+}
