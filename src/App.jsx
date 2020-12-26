@@ -8,6 +8,7 @@ import Layout from './containers/Layout/Layout';
 import Home from './containers/Home/Home';
 import CategoryProducts from './containers/Category/CategoryProducts';
 import ProductDetails from './containers/ProductDetails/ProductDetails';
+import Cart from './containers/Cart/Cart';
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -24,29 +25,30 @@ function App() {
     });
   }, []);
 
-  // const showToast = (type, msg) => {
-  //   toast[type](msg, {
-  //     position: 'top-right',
-  //     autoClose: 2000,
-  //     hideProgressBar: false,
-  //     closeOnClick: true,
-  //     pauseOnHover: true,
-  //     draggable: true,
-  //     progress: undefined,
-  //   });
-  // };
+  const showToast = (type, msg) => {
+    toast[type](msg, {
+      position: 'top-right',
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
 
   return (
     <div className="App">
       <div className="alertBox">
-        { alert.message && alert.type === 'alert-success' ? '' : '' }
-        { alert.message && alert.type === 'alert-danger' ? '' : '' }
+        { alert.message && alert.type === 'alert-success' ? showToast('success', alert.message) : '' }
+        { alert.message && alert.type === 'alert-danger' ? showToast('error', alert.message) : '' }
       </div>
       <Router>
         <Layout>
           <Switch>
             <Route path="/product/:categoryname/:productId" exact component={ProductDetails} />
             <Route path="/products/:categoryname" exact component={CategoryProducts} />
+            <Route path="/cart" exact component={Cart} />
             <Route path="/" exact component={Home} />
           </Switch>
         </Layout>

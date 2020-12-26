@@ -15,7 +15,7 @@ function login(type) {
           history.push('/');
         }
       } catch (err) {
-        dispatch(alertActions.error(err));
+        dispatch(alertActions.error(err.toString()));
       }
     }
   };

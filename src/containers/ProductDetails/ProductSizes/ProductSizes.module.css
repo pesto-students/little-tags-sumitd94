@@ -21,3 +21,8 @@
 .sizeBlock:first-child {
   margin-left: 0px;
 }
+
+.backgroundBlack {
+  background-color: black;
+  color: white;
+}

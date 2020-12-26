@@ -15,7 +15,6 @@
 
 .productImage img {
   height: 100%;
-  width: 100%;
   border-radius: 20px;
 }
 
@@ -28,4 +27,12 @@
 
 .productDetails p {
   margin: 16px 0px;
+}
+
+.quantityContainer input[type=number] {
+  max-width: 3rem;
+}
+
+.quantityContainer button {
+  cursor: pointer;
 }

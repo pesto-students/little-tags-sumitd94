@@ -4,12 +4,15 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import classNames from './ToolBar.module.css';
 import SearchBar from './SearchBar/SearchBar';
 import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
 
 const ToolBar = ({ drawerToggleClicked, toggleModalHandler }) => {
   const userDetails = useSelector((state) => state.authentication);
+  const cart = useSelector((state) => state.cart);
 
   const { loggedIn, user } = userDetails;
 
@@ -29,6 +32,12 @@ const ToolBar = ({ drawerToggleClicked, toggleModalHandler }) => {
           </span>
         ) : <span onClick={toggleModalHandler}>Login / Sign Up</span>}
       </div>
+      <Link to="/cart">
+        <div className={classNames.cartContainer}>
+          <FontAwesomeIcon icon={faGoogle} />
+          <span className={classNames.cartText}>{cart.allCarts.length}</span>
+        </div>
+      </Link>
     </header>
   );
 };

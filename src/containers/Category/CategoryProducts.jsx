@@ -15,8 +15,6 @@ const CategoryProducts = () => {
       dispatch(productActions.getAllProducts(categoryname));
     }
   }, []);
-
-  console.log('test');
   return (
     <>
       <div className={classNames.productLists}>

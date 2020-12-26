@@ -35,7 +35,7 @@
 }
 
 .login {
-  width: 20%;
+  width: 10%;
   display: none;
   color: white;
   cursor: pointer;
@@ -47,11 +47,21 @@
   }
 
   .SearchBar {
-    width: 60%;
+    width: 50%;
     margin: 0;
   }
 
   .login {
     display: inline;
   }
+}
+
+.cartContainer {
+  color: white;
+}
+
+.cartText {
+  position: relative;
+  top: -15px;
+  left: -7px;
 }
