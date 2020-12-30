@@ -1,12 +1,10 @@
-
-
 .quantity {
   float: left;
   margin-right: 15px;
   background-color: #eee;
   position: relative;
   width: 80px;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .quantity input {
@@ -20,7 +18,7 @@
   font-size: 20px;
   border: 0;
   outline: 0;
-  background-color: #F6F6F6
+  background-color: #f6f6f6;
 }
 
 .quantity input.qty {
@@ -33,17 +31,18 @@
   font-weight: 400;
   font-size: 15px;
   border-radius: 0;
-  background-clip: padding-box
+  background-clip: padding-box;
 }
 
-.quantity .minus, .quantity .plus {
+.quantity .minus,
+.quantity .plus {
   line-height: 0;
   background-clip: padding-box;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  -webkit-backgroundSize: 6px 30px;
-  -moz-backgroundSize: 6px 30px;
+  -webkit-backgroundsize: 6px 30px;
+  -moz-backgroundsize: 6px 30px;
   color: #bbb;
   font-size: 20px;
   position: absolute;
@@ -52,16 +51,34 @@
   right: 0;
   padding: 0;
   width: 25px;
-  z-index: 3
+  z-index: 3;
 }
 
-.quantity .minus:hover, .quantity .plus:hover {
-  background-color: #dad8da
+.quantity .minus:hover,
+.quantity .plus:hover {
+  background-color: #dad8da;
 }
 
 .quantity .minus {
-  bottom: 0
+  bottom: 0;
 }
 .shopping-cart {
   margin-top: 20px;
+}
+
+.productLists {
+  width: 50%;
+  margin: auto;
+}
+
+.productLists ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.productLists ul li {
+  margin: 16px 0px;
+  height: 128px;
+  background-color: #ffffff;
 }

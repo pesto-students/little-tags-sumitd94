@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import classNames from './ProductDetails.module.css';
 import ProductSizes from './ProductSizes/ProductSizes';
-import CartButton from './CartButton/CartButton';
 import { productActions, cartActions, alertActions } from '../../_actions';
 
 const ProductDetails = () => {
@@ -35,6 +36,7 @@ const ProductDetails = () => {
       dispatch(cartActions.addToCart({
         quantity,
         productid: productData[0].id,
+        productData,
         size,
       }));
     } else {
@@ -47,7 +49,9 @@ const ProductDetails = () => {
   };
 
   const decreaseQuantity = () => {
-    setQuantity(quantity === 0 ? 0 : (quantity - 1));
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
+    }
   };
 
   return (
@@ -66,7 +70,10 @@ const ProductDetails = () => {
         </p>
         <p><b>Size</b></p>
         <ProductSizes selectSize={handleSize} />
-        <CartButton addToCart={addToCart} />
+        <button type="button" className={classNames.CartButton} onClick={addToCart}>
+          <FontAwesomeIcon icon={faShoppingCart} />
+          ADD TO CART
+        </button>
         <div className={classNames.quantityContainer}>
           <button type="button" onClick={() => decreaseQuantity()}>-</button>
           <input type="number" value={quantity} />

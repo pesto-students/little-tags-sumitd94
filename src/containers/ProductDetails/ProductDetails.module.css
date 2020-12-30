@@ -29,10 +29,25 @@
   margin: 16px 0px;
 }
 
-.quantityContainer input[type=number] {
+.quantityContainer input[type="number"] {
   max-width: 3rem;
 }
 
 .quantityContainer button {
   cursor: pointer;
+}
+
+.CartButton {
+  background-color: black;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin: 16px 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.CartButton svg {
+  padding: 0;
+  padding-right: 8px;
 }
