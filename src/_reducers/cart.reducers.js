@@ -18,6 +18,8 @@ function cart(state = initialState, action) {
       return { allCarts: [...state.allCarts, action.cartdetails] };
     case cartConstants.REMOVECART:
       return removeFromCart(state.allCarts, action.productid);
+    case cartConstants.CLEARCART:
+      return { allCarts: [] };
     default:
       return state;
   }

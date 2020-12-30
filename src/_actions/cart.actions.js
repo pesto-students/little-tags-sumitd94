@@ -17,9 +17,16 @@ function removeCart(productid) {
   };
 }
 
+function clearCart() {
+  return (dispatch) => {
+    dispatch({ type: cartConstants.CLEARCART });
+  };
+}
+
 const cartActions = {
   addToCart,
   removeCart,
+  clearCart,
 };
 
 addToCart.propTypes = {
