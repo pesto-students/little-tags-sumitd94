@@ -1,0 +1,40 @@
+.addressLists {
+  width: 50%;
+  margin: auto;
+}
+
+.addressLists ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.addressLists ul li {
+  border: 1px solid #ccc;
+  margin: 16px 0px;
+  border-radius: 20px;
+  height: 128px;
+  background-color: #f4f4f4;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.address {
+  width: 50%;
+}
+
+.newAddress {
+  cursor: pointer;
+}
+
+.newAddress span {
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 2px;
+  margin: 0px 8px;
+}
+
+.newAddress p {
+  display: inline;
+}
