@@ -6,7 +6,10 @@ import Button from '../../components/UI/Button/Button';
 
 const Cart = () => {
   const cartDetails = useSelector((state) => state.cart.allCarts);
-  console.log(cartDetails);
+
+  function getCategory(category) {
+    return category.toLowerCase().replace(/ /g, '-');
+  }
 
   return (
     <>
@@ -17,7 +20,10 @@ const Cart = () => {
         <ul>
           {cartDetails.length > 0 && cartDetails.map((product) => (
             <li key={product.productid}>
-              <Product product={product.productData[0]} categoryname="Mens" />
+              <Product
+                product={product.productData[0]}
+                categoryname={getCategory(product.productData[0].category)}
+              />
             </li>
           ))}
         </ul>
