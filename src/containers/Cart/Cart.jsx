@@ -42,9 +42,6 @@ const Cart = (props) => {
           ))}
         </ul>
         <Button text="Proceed" clickHandler={proceedHandler} />
-        <button type="button" className={classNames.littleTagButton} onClick={proceedHandler}>
-          Proceed
-        </button>
       </div>
     </>
   );
