@@ -24,6 +24,8 @@ if (userLoggedinStatus) {
   initialState.loggedIn = false;
 }
 
+initialState.address = [];
+
 function manageSuccessLogin(data) {
   localStorage.setItem('loggedIn', data.loggedIn);
   localStorage.setItem('user', JSON.stringify(data.user));
@@ -56,6 +58,12 @@ function authentication(state = initialState, action) {
       return {};
     case userConstants.LOGOUT:
       return manageLogout();
+
+    case userConstants.ADDADDRESS:
+      return {
+        ...state,
+        address: [...state.address, action.address],
+      };
     default:
       return state;
   }

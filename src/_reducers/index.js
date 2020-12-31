@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import authentication from './authentication.reducer';
+import authentication from './user.reducer';
 import alert from './alert.reducerts';
 import products from './products.reducers';
 import cart from './cart.reducers';
