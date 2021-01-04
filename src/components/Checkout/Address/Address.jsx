@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { userActions } from '../../_actions';
+import { userActions } from '../../../_actions';
 import classNames from './Address.module.css';
-import Button from '../../components/UI/Button/Button';
+import Button from '../../UI/Button/Button';
 
-const Address = () => {
+const Address = ({ history }) => {
   const dispatch = useDispatch();
   const address = useSelector((state) => state.authentication.address);
 
@@ -14,6 +15,10 @@ const Address = () => {
       city: 'Delhi',
     }));
   }, []);
+
+  const proceedHandler = () => {
+    history.push('/checkout/payment');
+  };
 
   return (
     <div className={classNames.addressLists}>
@@ -46,9 +51,15 @@ const Address = () => {
         <span>+</span>
         <p>Add New Address</p>
       </div>
-      <Button text="Proceed" clickHandler={() => {}} />
+      <Button text="Proceed" clickHandler={proceedHandler} />
     </div>
   );
+};
+
+Address.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
 };
 
 export default Address;

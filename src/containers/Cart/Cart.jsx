@@ -1,14 +1,12 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import classNames from './Cart.module.css';
 import Product from '../Category/Product/Product';
 import Button from '../../components/UI/Button/Button';
 
-const Cart = (props) => {
+const Cart = ({ history }) => {
   const cartDetails = useSelector((state) => state.cart.allCarts);
   const address = useSelector((state) => state.authentication.address);
 
@@ -18,10 +16,10 @@ const Cart = (props) => {
 
   const proceedHandler = () => {
     if (address.length > 0) {
-      props.history.push('/address');
+      history.push('/checkout');
     } else {
       // render to add an address
-      props.history.push('/address');
+      history.push('/checkout');
     }
   };
 
@@ -45,6 +43,12 @@ const Cart = (props) => {
       </div>
     </>
   );
+};
+
+Cart.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
 };
 
 export default withRouter(Cart);

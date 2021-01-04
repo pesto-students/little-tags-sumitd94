@@ -9,7 +9,10 @@ import Home from './containers/Home/Home';
 import CategoryProducts from './containers/Category/CategoryProducts';
 import ProductDetails from './containers/ProductDetails/ProductDetails';
 import Cart from './containers/Cart/Cart';
-import Address from './containers/Address/Address';
+import Address from './components/Checkout/Address/Address';
+import Payment from './components/Checkout/Payment/Payment';
+import ThankYou from './components/Checkout/ThankYou/ThankYou';
+import NewAddress from './components/Checkout/Address/NewAddress/NewAddress';
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -50,7 +53,10 @@ function App() {
             <Route path="/product/:categoryname/:productId" exact component={ProductDetails} />
             <Route path="/products/:categoryname" exact component={CategoryProducts} />
             <Route path="/cart" exact component={Cart} />
-            <Route path="/address" exact component={Address} />
+            <Route path="/new-address" exact component={NewAddress} />
+            <Route path="/checkout/payment" exact component={Payment} />
+            <Route path="/checkout" exact component={Address} />
+            <Route path="/thank-you" exact component={ThankYou} />
             <Route path="/" exact component={Home} />
           </Switch>
         </Layout>
