@@ -8,6 +8,11 @@
   padding-left: 16px;
 }
 
+.Categories a {
+  text-decoration: none;
+  color: #6f6f6f;
+}
+
 .heading {
   font-family: ProximaNova;
   font-size: 16px;

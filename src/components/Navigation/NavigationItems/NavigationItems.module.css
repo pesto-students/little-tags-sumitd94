@@ -5,6 +5,11 @@
   flex-wrap: wrap;
 }
 
+.NavigationItems a {
+  text-decoration: none;
+  color: black;
+}
+
 .NavigationItems p {
   border: solid 1px #707070;
 }

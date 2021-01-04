@@ -1,6 +1,8 @@
 {
   "name": "little-tags",
   "version": "0.1.0",
+  "author": "Backend Masters",
+  "github": "https://github.com/pesto-students/little-tags-sumitd94/tree/develop",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
