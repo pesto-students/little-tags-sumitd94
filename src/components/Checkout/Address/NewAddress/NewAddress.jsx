@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import Input from '../../../UI/Input/Input';
 import classNames from './NewAddress.module.css';
 import { addressActions } from '../../../../_actions';
 
-const NewAddress = () => {
+const NewAddress = ({ history }) => {
   const { orderForm } = useSelector((state) => state.address);
   const { register, handleSubmit } = useForm();
   const dispatch = useDispatch();
@@ -14,6 +15,7 @@ const NewAddress = () => {
     dispatch(addressActions.addAddress({
       data,
     }));
+    history.replace('/checkout');
   };
 
   return (
@@ -36,6 +38,12 @@ const NewAddress = () => {
       </form>
     </div>
   );
+};
+
+NewAddress.propTypes = {
+  history: PropTypes.shape({
+    replace: PropTypes.func,
+  }).isRequired,
 };
 
 export default NewAddress;

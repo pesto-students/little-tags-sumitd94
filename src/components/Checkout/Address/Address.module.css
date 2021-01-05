@@ -26,12 +26,13 @@
 
 .newAddress {
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
-.newAddress span {
-  border: 1px solid black;
-  border-radius: 50%;
-  padding: 2px;
+.newAddress svg {
   margin: 0px 8px;
 }
 
