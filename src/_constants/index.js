@@ -3,6 +3,7 @@ import userConstants from './user.constants';
 import productConstants from './products.constants';
 import cartConstants from './cart.constants';
 import orderConstants from './order.constants';
+import addressConstants from './address.constants';
 
 export {
   alertConstants,
@@ -10,4 +11,5 @@ export {
   productConstants,
   cartConstants,
   orderConstants,
+  addressConstants,
 };

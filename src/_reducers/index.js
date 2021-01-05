@@ -4,6 +4,7 @@ import alert from './alert.reducerts';
 import products from './products.reducers';
 import cart from './cart.reducers';
 import order from './order.reducer';
+import address from './address.reducer';
 
 const rootReducer = combineReducers({
   authentication,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   products,
   cart,
   order,
+  address,
 });
 
 export default rootReducer;
