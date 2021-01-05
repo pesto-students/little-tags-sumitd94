@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/aria-role */
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
@@ -18,6 +20,10 @@ const Address = ({ history }) => {
 
   const proceedHandler = () => {
     history.push('/checkout/payment');
+  };
+
+  const newAddressHandler = () => {
+    history.push('/new-address');
   };
 
   return (
@@ -47,7 +53,11 @@ const Address = ({ history }) => {
           </div>
         </li>
       </ul>
-      <div className={classNames.newAddress}>
+      <div
+        className={classNames.newAddress}
+        onClick={newAddressHandler}
+        onKeyPress={newAddressHandler}
+      >
         <span>+</span>
         <p>Add New Address</p>
       </div>

@@ -70,15 +70,15 @@ const ProductDetails = () => {
         </p>
         <p><b>Size</b></p>
         <ProductSizes selectSize={handleSize} />
-        <button type="button" className={classNames.CartButton} onClick={addToCart}>
-          <FontAwesomeIcon icon={faShoppingCart} />
-          ADD TO CART
-        </button>
         <div className={classNames.quantityContainer}>
           <button type="button" onClick={() => decreaseQuantity()}>-</button>
           <input type="number" value={quantity} />
           <button type="button" onClick={() => increaseQuantity()}>+</button>
         </div>
+        <button type="button" className={classNames.CartButton} onClick={addToCart}>
+          <FontAwesomeIcon icon={faShoppingCart} />
+          ADD TO CART
+        </button>
       </div>
     </div>
   );

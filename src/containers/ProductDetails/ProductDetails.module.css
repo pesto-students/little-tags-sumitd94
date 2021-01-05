@@ -29,6 +29,10 @@
   margin: 16px 0px;
 }
 
+.quantityContainer {
+  margin: 16px 0;
+}
+
 .quantityContainer input[type="number"] {
   max-width: 3rem;
 }
