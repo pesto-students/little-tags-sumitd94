@@ -5,6 +5,7 @@ import alertActions from './alert.actions';
 import productActions from './products.actions';
 import cartActions from './cart.actions';
 import orderActions from './order.actions';
+import addressActions from './address.actions';
 
 export {
   userActions,
@@ -12,4 +13,5 @@ export {
   productActions,
   cartActions,
   orderActions,
+  addressActions,
 };

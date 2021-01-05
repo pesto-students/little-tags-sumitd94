@@ -31,16 +31,9 @@ function logout() {
   };
 }
 
-function addAddress(addressObject) {
-  return (dispatch) => {
-    dispatch({ type: userConstants.ADDADDRESS, address: addressObject });
-  };
-}
-
 const userActions = {
   login,
   logout,
-  addAddress,
 };
 
 export default userActions;

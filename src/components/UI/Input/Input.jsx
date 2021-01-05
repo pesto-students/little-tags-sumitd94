@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import classNames from './Input.module.css';
 
 const Input = ({
-  elementType, elementConfig, label, changed,
+  elementType, elementConfig, label, refValue, formKey,
 }) => {
   let inputElement = null;
 
@@ -15,7 +15,8 @@ const Input = ({
         <input
           className={classNames.InputElement}
           {...elementConfig}
-          onChange={changed}
+          ref={refValue}
+          name={formKey}
         />
       );
       break;
@@ -24,7 +25,8 @@ const Input = ({
         <textarea
           className={classNames.InputElement}
           {...elementConfig}
-          onChange={changed}
+          ref={refValue}
+          name={formKey}
         />
       );
       break;
@@ -33,7 +35,8 @@ const Input = ({
         <input
           className={classNames.InputElement}
           {...elementConfig}
-          onChange={changed}
+          ref={refValue}
+          name={formKey}
         />
       );
       break;
@@ -51,7 +54,8 @@ Input.propTypes = {
   elementType: PropTypes.string.isRequired,
   elementConfig: PropTypes.object.isRequired,
   label: PropTypes.string.isRequired,
-  changed: PropTypes.func.isRequired,
+  refValue: PropTypes.func.isRequired,
+  formKey: PropTypes.string.isRequired,
 };
 
 export default Input;

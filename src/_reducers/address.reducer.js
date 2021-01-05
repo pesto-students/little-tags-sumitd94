@@ -54,11 +54,12 @@ const initialState = {
 };
 
 function address(state = initialState, action) {
+  console.log(action);
   switch (action.type) {
     case addressConstants.ADDADDRESS:
       return {
         ...state,
-        userAddress: [...state.userAddress, action.address],
+        userAddress: [...state.userAddress, action.address.data],
       };
     default:
       return state;

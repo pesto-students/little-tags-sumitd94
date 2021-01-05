@@ -1,37 +1,39 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useForm } from 'react-hook-form';
 import Input from '../../../UI/Input/Input';
 import classNames from './NewAddress.module.css';
-import Button from '../../../UI/Button/Button';
+import { addressActions } from '../../../../_actions';
 
 const NewAddress = () => {
   const { orderForm } = useSelector((state) => state.address);
+  const { register, handleSubmit } = useForm();
+  const dispatch = useDispatch();
 
-  const orderClickHandler = () => {
-    console.log('clicked');
-  };
-
-  const inputChangeHandler = (e) => {
-    console.log(e.target.value);
+  const onSubmit = (data) => {
+    dispatch(addressActions.addAddress({
+      data,
+    }));
   };
 
   return (
     <div className={classNames.ContactData}>
       <h4>Deliver To</h4>
-      <form onSubmit={orderClickHandler}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         {
           Object.keys(orderForm).map((formKey) => (
             <Input
               label={orderForm[formKey].label}
+              formKey={formKey}
               key={formKey}
               elementType={orderForm[formKey].elementType}
               elementConfig={orderForm[formKey].elementConfig}
-              changed={inputChangeHandler}
+              refValue={register}
             />
           ))
         }
+        <input type="submit" value="Add Information" className={classNames.submitBtn} />
       </form>
-      <Button text="Add Information" clickHandler={() => {}} />
     </div>
   );
 };
