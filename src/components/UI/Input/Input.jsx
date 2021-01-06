@@ -2,12 +2,15 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import PropTypes from 'prop-types';
+import messages from '../../../_helpers/validationMessages';
 import classNames from './Input.module.css';
 
 const Input = ({
-  elementType, elementConfig, label, refValue, formKey,
+  elementType, elementConfig, label, refValue, formKey, required, validationErrors,
 }) => {
   let inputElement = null;
+
+  console.log(validationErrors);
 
   switch (elementType) {
     case ('input'):
@@ -42,10 +45,18 @@ const Input = ({
       break;
   }
 
+  const labelClass = [classNames.Label];
+  if (required) {
+    labelClass.push(classNames.required);
+  }
+
   return (
     <div className={classNames.Input}>
-      <label htmlFor={label} className={classNames.Label}>{label}</label>
+      <label htmlFor={label} className={labelClass.join(' ')}>{label}</label>
       {inputElement}
+      <div className={classNames.Label}>
+        {validationErrors[formKey] && <span>{messages[formKey]}</span>}
+      </div>
     </div>
   );
 };
@@ -56,6 +67,8 @@ Input.propTypes = {
   label: PropTypes.string.isRequired,
   refValue: PropTypes.func.isRequired,
   formKey: PropTypes.string.isRequired,
+  required: PropTypes.bool.isRequired,
+  validationErrors: PropTypes.object.isRequired,
 };
 
 export default Input;

@@ -4,6 +4,7 @@
   box-sizing: border-box;
   display: inline-block;
   margin: auto;
+  vertical-align: top;
 }
 
 .Label {
@@ -12,6 +13,11 @@
   width: 80%;
   margin: auto;
   margin-bottom: 8px;
+}
+
+.required::after {
+  content: "*";
+  color: red;
 }
 
 .InputElement {
@@ -28,4 +34,10 @@
 
 .InputElement:focus {
   outline: none;
+}
+
+.Label span {
+  height: 100%;
+  overflow: auto;
+  color: red;
 }

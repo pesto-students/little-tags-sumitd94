@@ -8,7 +8,7 @@ import { addressActions } from '../../../../_actions';
 
 const NewAddress = ({ history }) => {
   const { orderForm } = useSelector((state) => state.address);
-  const { register, handleSubmit } = useForm();
+  const { register, errors, handleSubmit } = useForm();
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
@@ -30,7 +30,9 @@ const NewAddress = ({ history }) => {
               key={formKey}
               elementType={orderForm[formKey].elementType}
               elementConfig={orderForm[formKey].elementConfig}
-              refValue={register}
+              refValue={register(orderForm[formKey].validation)}
+              required={orderForm[formKey].validation.required}
+              validationErrors={errors}
             />
           ))
         }
