@@ -12,12 +12,12 @@ const NavigationItems = () => {
       <h2>Categories</h2>
       <ul className={classNames.NavigationItemsList}>
         <li>
-          <NavLink to="/products/accessories">
+          <NavLink to="/products/electronics">
             Accessories
           </NavLink>
         </li>
         <li>
-          <NavLink to="/products/shirts">
+          <NavLink to="/products/men-clothing">
             Shirts
           </NavLink>
         </li>

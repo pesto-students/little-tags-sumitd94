@@ -21,7 +21,7 @@ const CategoryProducts = () => {
         <h2>
           All
           {' '}
-          { categoryname }
+          { categoryname === 'electronics' ? 'Accessories' : categoryname }
         </h2>
         <ul>
           {categoryname in products && products[categoryname].map((product) => (
