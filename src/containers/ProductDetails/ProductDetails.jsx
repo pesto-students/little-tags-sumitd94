@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -71,9 +73,21 @@ const ProductDetails = () => {
         <p><b>Size</b></p>
         <ProductSizes selectSize={handleSize} />
         <div className={classNames.quantityContainer}>
-          <button type="button" onClick={() => decreaseQuantity()}>-</button>
-          <input type="number" value={quantity} />
-          <button type="button" onClick={() => increaseQuantity()}>+</button>
+          <div
+            className={classNames.valueBtn}
+            id={classNames.decrease}
+            onClick={() => decreaseQuantity()}
+          >
+            -
+          </div>
+          <input className={classNames.number} type="number" value={quantity} />
+          <div
+            className={classNames.valueBtn}
+            id={classNames.increase}
+            onClick={() => increaseQuantity()}
+          >
+            +
+          </div>
         </div>
         <button type="button" className={classNames.CartButton} onClick={addToCart}>
           <FontAwesomeIcon icon={faShoppingCart} />
