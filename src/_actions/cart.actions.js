@@ -10,6 +10,12 @@ function addToCart(product) {
   };
 }
 
+function updateCart(product) {
+  return (dispatch) => {
+    dispatch({ type: cartConstants.UPDATECART, cartdetails: product });
+  };
+}
+
 function removeCart(productid) {
   return (dispatch) => {
     dispatch({ type: cartConstants.REMOVECART, productid });
@@ -25,6 +31,7 @@ function clearCart() {
 
 const cartActions = {
   addToCart,
+  updateCart,
   removeCart,
   clearCart,
 };
