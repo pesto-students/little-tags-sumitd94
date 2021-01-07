@@ -22,8 +22,11 @@ const Cart = ({ history }) => {
     dispatch(cartActions.updateCart(updatedCart));
   };
 
-  const decreaseQuantity = () => {
-    console.log('hi');
+  const decreaseQuantity = (product, index) => {
+    const updatedCart = [...cartDetails];
+    const updatedQty = product.quantity - 1;
+    updatedCart[index].quantity = updatedQty;
+    dispatch(cartActions.updateCart(updatedCart));
   };
 
   const proceedHandler = () => {
@@ -52,7 +55,7 @@ const Cart = ({ history }) => {
                     <div
                       className={classNames.valueBtn}
                       id={classNames.decrease}
-                      onClick={() => decreaseQuantity(product)}
+                      onClick={() => decreaseQuantity(product, index)}
                     >
                       -
                     </div>
