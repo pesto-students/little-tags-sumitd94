@@ -3,7 +3,7 @@
 }
 
 .productLists {
-  width: 50%;
+  width: 60%;
   margin: auto;
 }
 
@@ -47,6 +47,8 @@
 
 .price {
   font-weight: bold;
+  width: 20%;
+  text-align: left;
 }
 
 .quantityContainer {
@@ -89,6 +91,7 @@
   margin: 0px;
   width: 40px;
   height: 41px;
+  outline: none;
 }
 
 .valueBtn:hover {
@@ -100,4 +103,9 @@
   flex-direction: column;
   align-items: flex-start;
   width: 60%;
+  padding-left: 16px;
+}
+
+.productDetails p {
+  text-align: left;
 }
