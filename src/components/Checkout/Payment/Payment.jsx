@@ -1,12 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { orderActions } from '../../../_actions';
 import classNames from './Payment.module.css';
 import Button from '../../UI/Button/Button';
 
 const Payment = ({ history }) => {
+  const dispatch = useDispatch();
   const { deliveryAddress } = useSelector((state) => state.address);
+  const cartDetails = useSelector((state) => state.cart.allCarts);
   const proceedHandler = () => {
+    dispatch(orderActions.orderNow(cartDetails));
     history.push('/thank-you');
   };
 

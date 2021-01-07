@@ -8,7 +8,7 @@ function order(state = initialState, action) {
   switch (action.type) {
     case orderConstants.ORDER:
       return {
-        allOrders: [...state.allOrders, action.cart],
+        allOrders: [...state.allOrders, ...action.carts],
       };
     default:
       return state;

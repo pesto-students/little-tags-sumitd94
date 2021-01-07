@@ -13,6 +13,7 @@ import Address from './components/Checkout/Address/Address';
 import Payment from './components/Checkout/Payment/Payment';
 import ThankYou from './components/Checkout/ThankYou/ThankYou';
 import NewAddress from './components/Checkout/Address/NewAddress/NewAddress';
+import PastOrders from './components/Orders/PastOrders';
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -57,6 +58,7 @@ function App() {
             <Route path="/checkout/payment" exact component={Payment} />
             <Route path="/checkout" exact component={Address} />
             <Route path="/thank-you" exact component={ThankYou} />
+            <Route path="/past-orders" exact component={PastOrders} />
             <Route path="/" exact component={Home} />
           </Switch>
         </Layout>

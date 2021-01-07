@@ -5,8 +5,8 @@ import { orderConstants } from '../_constants';
 // pass all the items along with properties of the cart from view
 function orderNow(allCarts) {
   return (dispatch) => {
-    dispatch(cartActions.clearCart);
-    dispatch({ type: orderConstants.ORDER, allCarts });
+    dispatch(cartActions.clearCart());
+    dispatch({ type: orderConstants.ORDER, carts: allCarts });
   };
 }
 
