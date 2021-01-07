@@ -36,8 +36,16 @@ const NavigationItems = () => {
       <>
         <p> </p>
         <ul className={classNames.NavigationItemsList}>
-          <li>Past Orders</li>
-          <li>Add Address</li>
+          <li>
+            <NavLink to="/past-orders">
+              Past Orders
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/new-address">
+              Add Address
+            </NavLink>
+          </li>
         </ul>
       </>
       )}

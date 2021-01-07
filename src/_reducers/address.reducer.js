@@ -83,6 +83,7 @@ const initialState = {
     },
   },
   userAddress: [],
+  deliveryAddress: {},
 };
 
 function address(state = initialState, action) {
@@ -92,6 +93,11 @@ function address(state = initialState, action) {
       return {
         ...state,
         userAddress: [...state.userAddress, action.address.data],
+      };
+    case addressConstants.DELIVERYADDRESS:
+      return {
+        ...state,
+        deliveryAddress: action.address,
       };
     default:
       return state;

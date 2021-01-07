@@ -3,12 +3,14 @@
 /* eslint-disable jsx-a11y/aria-role */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import classNames from './Address.module.css';
 import Button from '../../UI/Button/Button';
+import { addressActions } from '../../../_actions';
 
 const Address = ({ history }) => {
   const { userAddress } = useSelector((state) => state.address);
+  const dispatch = useDispatch();
 
   const proceedHandler = () => {
     history.push('/checkout/payment');
@@ -18,6 +20,10 @@ const Address = ({ history }) => {
     history.push('/new-address');
   };
 
+  const addressChangeHandler = (address) => {
+    dispatch(addressActions.addDeliveryAddress(address));
+  };
+
   return (
     <div className={classNames.addressLists}>
       <h2>Deliver To</h2>
@@ -25,14 +31,13 @@ const Address = ({ history }) => {
         {
           userAddress.map((address, index) => (
             <li key={index}>
-              <input type="radio" name="deliveryAddress" />
+              <input type="radio" name="deliveryAddress" className={classNames.radio} onChange={() => addressChangeHandler(address)} />
               <div className={classNames.address}>
-                <span>{`${address.firstName} ${address.lastName}`}</span>
-                <span>
-                  1418 Riverwood Drive,
-                  Suite 3245 Cottonwood,
-                  DL 110092, India
-                </span>
+                <span className={classNames.name}>{`${address.firstName} ${address.lastName}`}</span>
+                <span>{address.addressLineOne}</span>
+                {address.addressLineTwo > '' && <span>{address.addressLineTwo}</span>}
+                <span>{`${address.state} ${address.zip}, India`}</span>
+                <span>{address.phone}</span>
               </div>
             </li>
           ))

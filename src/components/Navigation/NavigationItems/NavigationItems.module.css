@@ -8,6 +8,15 @@
 .NavigationItems a {
   text-decoration: none;
   color: black;
+  font-family: Gotham;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.19;
+  letter-spacing: normal;
+  text-align: left;
+  color: black;
+  font-size: 18px;
 }
 
 .NavigationItems p {
