@@ -5,6 +5,7 @@ import { productActions } from '../../_actions';
 import classNames from './CategoryProducts.module.css';
 import Product from './Product/Product';
 import Pagination from './Product/Pagination';
+import Spinner from '../../components/UI/Spinner/Spinner';
 
 const CategoryProducts = () => {
   const { categoryname } = useParams();
@@ -35,6 +36,7 @@ const CategoryProducts = () => {
   }, [products, currentPage]);
   return (
     <>
+      {currentProduct.length === 0 && <Spinner />}
       <div className={classNames.productLists}>
         <h2>
           All

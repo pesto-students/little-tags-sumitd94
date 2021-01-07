@@ -7,12 +7,22 @@
 }
 
 .pageNumbers > li {
-  margin-right: 0.5em;
-  color: blue;
   user-select: none;
   cursor: pointer;
+  font-family: Gotham;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.19;
+  letter-spacing: normal;
+  color: #707070;
+  margin: 0 8px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: solid 1px #707070;
 }
 
 .activePage {
-  border-bottom: 1px solid blue;
+  background-color: #707070;
+  color: #ffffff !important;
 }
