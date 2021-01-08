@@ -73,5 +73,6 @@ Use `https://fakestoreapi.com/products` to fetch products.
 
 - Integrate Payment methods
 - Improve Past Orders screen
+- make moibile responsive
 - Connect the store with backend
 - Product reviews section
