@@ -47,6 +47,7 @@ function App() {
       <div className="alertBox">
         { alert.message && alert.type === 'alert-success' ? showToast('success', alert.message) : '' }
         { alert.message && alert.type === 'alert-danger' ? showToast('error', alert.message) : '' }
+        { alert.message && alert.type === 'alert-info' ? showToast('info', alert.message) : '' }
       </div>
       <Router>
         <Layout>

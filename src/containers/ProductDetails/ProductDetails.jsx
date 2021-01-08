@@ -16,6 +16,7 @@ const ProductDetails = () => {
   const [size, setSize] = useState();
   const dispatch = useDispatch();
   const allProducts = useSelector((state) => state.products.allproducts);
+  const { loggedIn } = useSelector((state) => state.authentication);
 
   useEffect(() => {
     if (categoryname in allProducts) {
@@ -34,6 +35,12 @@ const ProductDetails = () => {
 
   const addToCart = () => {
     console.log('addthis', size, productData[0].id);
+
+    if (!loggedIn) {
+      dispatch(alertActions.information('Please Login to continue adding product to cart'));
+      return;
+    }
+
     if (quantity > 0) {
       dispatch(cartActions.addToCart({
         quantity,
