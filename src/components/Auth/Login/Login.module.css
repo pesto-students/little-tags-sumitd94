@@ -8,6 +8,7 @@
   font-family: Gotham;
   font-size: 16px;
   cursor: pointer;
+  outline: none;
 }
 
 .loginContent button svg {

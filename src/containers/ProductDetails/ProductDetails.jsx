@@ -74,7 +74,7 @@ const ProductDetails = () => {
           $
           {productData[0] && productData[0].price}
         </p>
-        <p>
+        <p className={classNames.productDesc}>
           {productData[0] && productData[0].description}
         </p>
         <p><b>Size</b></p>
