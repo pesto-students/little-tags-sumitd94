@@ -1,0 +1,101 @@
+.demandSections {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 90%;
+  margin: auto;
+  height: 450px;
+  align-items: center;
+}
+
+.demandTitle {
+  font-family: Gotham;
+  font-size: 56px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+.demandSections div {
+  width: 30%;
+  margin: 0px 12px;
+}
+
+.section1 {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  position: relative;
+}
+
+.section1 div {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.section2 {
+  height: 90%;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  position: relative;
+  background-image: url("./../../../assets/backpack.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  cursor: pointer;
+}
+
+.section3 {
+  height: 90%;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  position: relative;
+  background-image: url("./../../../assets/accessories.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  cursor: pointer;
+}
+
+.tagName {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  position: absolute;
+  bottom: 0;
+  opacity: 0.75;
+  background-image: linear-gradient(84deg, #000000 4%, rgba(0, 0, 0, 0.5) 100%);
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.tshirt {
+  background-image: url("../../../assets/Tshirt-design.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.jeans {
+  background-image: url("./../../../assets/jeans.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  cursor: pointer;
+}
+
+.tagName a {
+  text-decoration: none;
+  color: white;
+}

@@ -1,0 +1,35 @@
+.NavigationItems {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+.NavigationItems a {
+  text-decoration: none;
+  color: black;
+  font-family: Gotham;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.19;
+  letter-spacing: normal;
+  text-align: left;
+  color: black;
+  font-size: 18px;
+}
+
+.NavigationItems p {
+  border: solid 1px #707070;
+}
+
+.NavigationItems h2 {
+  padding: 16px;
+}
+
+.NavigationItemsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding: 16px;
+}

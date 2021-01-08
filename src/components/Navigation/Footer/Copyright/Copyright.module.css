@@ -1,0 +1,26 @@
+.Copyright {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Copyright span {
+  font-family: ProximaNova;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.19;
+  letter-spacing: 0.55px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.71);
+  padding-bottom: 16px;
+}
+
+.website {
+  padding-left: 16px;
+}
+
+.rights {
+  padding-right: 16px;
+}

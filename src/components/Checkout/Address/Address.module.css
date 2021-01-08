@@ -1,0 +1,57 @@
+.addressLists {
+  width: 50%;
+  margin: auto;
+}
+
+.addressLists ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.addressLists ul li {
+  border: 1px solid #ccc;
+  width: 60%;
+  margin: 16px auto;
+  border-radius: 20px;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: flex-start;
+  padding: 16px;
+}
+
+.address {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.radio {
+  width: 10%;
+  height: 2em;
+}
+
+.radio:checked {
+  background-color: black;
+}
+
+.newAddress {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.newAddress svg {
+  margin: 0px 8px;
+}
+
+.newAddress p {
+  display: inline;
+}

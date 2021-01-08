@@ -1,0 +1,60 @@
+.paymentContainer {
+  width: 50%;
+  margin: auto;
+}
+
+.addressLists {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.addressLists li {
+  border: 1px solid #ccc;
+  width: 60%;
+  margin: 16px auto;
+  border-radius: 20px;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: flex-start;
+  padding: 16px;
+}
+
+.address {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.radio {
+  width: 10%;
+  height: 2em;
+}
+
+.paymentMethods {
+  width: 50%;
+  margin: auto;
+}
+
+.paymentMethods h2 {
+  text-align: left;
+}
+
+.paymentMethodLists {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.paymentMethodLists li {
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px 0px;
+}
