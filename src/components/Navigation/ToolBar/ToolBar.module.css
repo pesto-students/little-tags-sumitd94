@@ -9,6 +9,7 @@
   flex-direction: row;
   z-index: 90;
   background-color: black;
+  justify-content: center;
 }
 
 .logo {

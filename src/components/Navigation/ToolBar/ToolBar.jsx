@@ -17,28 +17,30 @@ const ToolBar = ({ drawerToggleClicked, toggleModalHandler }) => {
   const { loggedIn, user } = userDetails;
 
   return (
-    <header className={classNames.ToolBar}>
-      <DrawerToggle clicked={drawerToggleClicked} />
-      <div className={classNames.logo}>
-        <Link to="/"> Little Tags </Link>
-      </div>
-      <div className={classNames.SearchBar}>
-        <SearchBar />
-      </div>
-      <div className={classNames.login}>
-        { loggedIn === true ? (
-          <span>
-            { user.displayName }
-          </span>
-        ) : <span onClick={toggleModalHandler}>Login / Sign Up</span>}
-      </div>
-      <Link to="/cart">
-        <div className={classNames.cartContainer}>
-          <FontAwesomeIcon icon={faShoppingCart} />
-          {cart.allCarts.length > 0
-          && <span className={classNames.cartText}>{cart.allCarts.length}</span>}
+    <header>
+      <div className={classNames.ToolBar}>
+        <DrawerToggle clicked={drawerToggleClicked} />
+        <div className={classNames.logo}>
+          <Link to="/"> Little Tags </Link>
         </div>
-      </Link>
+        <div className={classNames.SearchBar}>
+          <SearchBar />
+        </div>
+        <div className={classNames.login}>
+          { loggedIn === true ? (
+            <span>
+              { user.displayName }
+            </span>
+          ) : <span onClick={toggleModalHandler}>Login / Sign Up</span>}
+        </div>
+        <Link to="/cart">
+          <div className={classNames.cartContainer}>
+            <FontAwesomeIcon icon={faShoppingCart} />
+            {cart.allCarts.length > 0
+            && <span className={classNames.cartText}>{cart.allCarts.length}</span>}
+          </div>
+        </Link>
+      </div>
     </header>
   );
 };
