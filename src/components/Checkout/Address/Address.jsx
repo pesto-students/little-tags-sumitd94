@@ -6,14 +6,18 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import classNames from './Address.module.css';
 import Button from '../../UI/Button/Button';
-import { addressActions } from '../../../_actions';
+import { addressActions, alertActions } from '../../../_actions';
 
 const Address = ({ history }) => {
-  const { userAddress } = useSelector((state) => state.address);
+  const { userAddress, deliveryAddress } = useSelector((state) => state.address);
   const dispatch = useDispatch();
 
   const proceedHandler = () => {
-    history.push('/checkout/payment');
+    if (deliveryAddress > '') {
+      history.push('/checkout/payment');
+    } else {
+      dispatch(alertActions.error('Please Select an address to proceed'));
+    }
   };
 
   const newAddressHandler = () => {

@@ -83,7 +83,7 @@ const initialState = {
     },
   },
   userAddress: [],
-  deliveryAddress: {},
+  deliveryAddress: '',
 };
 
 function address(state = initialState, action) {

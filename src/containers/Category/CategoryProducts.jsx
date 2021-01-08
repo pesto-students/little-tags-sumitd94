@@ -30,7 +30,12 @@ const CategoryProducts = () => {
       const indexOfLastProduct = currentPage * pageLimit;
       const indexOfFirstProduct = indexOfLastProduct - pageLimit;
       const slicedProduct = products[categoryname].slice(indexOfFirstProduct, indexOfLastProduct);
-      setCurrentProduct(slicedProduct);
+      if (categoryname === 'men-clothing') {
+        setCurrentProduct(products[categoryname]);
+      } else {
+        setCurrentProduct(slicedProduct);
+      }
+
       setTotalProducts(products[categoryname].length);
     }
   }, [products, currentPage]);
@@ -51,6 +56,7 @@ const CategoryProducts = () => {
           ))}
         </ul>
       </div>
+      {categoryname !== 'men-clothing' && (
       <div>
         <Pagination
           totalRecords={totalProducts}
@@ -59,6 +65,7 @@ const CategoryProducts = () => {
           currentPage={currentPage}
         />
       </div>
+      )}
     </>
   );
 };
