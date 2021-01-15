@@ -1,22 +1,25 @@
 import { userConstants } from '../_constants';
 import alertActions from './alert.actions';
 import { history } from '../_helpers';
-import { logoutGoogle, signInWithGoogle } from '../_services';
+import { logoutGoogle, signInWithGoogle, signInWithFacebook } from '../_services';
 
 function login(type) {
   return async (dispatch) => {
-    if (type === 'google') {
-      try {
-        const res = await signInWithGoogle();
-        if (res) {
-          dispatch(alertActions.success('Login Success'));
-          dispatch({ type: userConstants.LOGIN_SUCCESS, user: res.user });
-        } else {
-          history.push('/');
-        }
-      } catch (err) {
-        dispatch(alertActions.error(err.toString()));
+    try {
+      let res = '';
+      if (type === 'google') {
+        res = await signInWithGoogle();
+      } else {
+        res = await signInWithFacebook();
       }
+      if (res) {
+        dispatch(alertActions.success('Login Success'));
+        dispatch({ type: userConstants.LOGIN_SUCCESS, user: res.user });
+      } else {
+        history.push('/');
+      }
+    } catch (err) {
+      dispatch(alertActions.error(err.toString()));
     }
   };
 }

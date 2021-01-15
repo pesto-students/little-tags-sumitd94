@@ -23,7 +23,7 @@ const Login = () => {
         Log in / Sign up using your
       </div>
       <LoginMethod text="Google Account" type="Google" click={() => handleSubmit('google')} />
-      <LoginMethod text="Facebook Account" type="Facebook" click={() => ''} />
+      <LoginMethod text="Facebook Account" type="Facebook" click={() => handleSubmit('facebook')} />
     </div>
   );
 };
