@@ -78,7 +78,16 @@ const Cart = ({ history }) => {
             </li>
           ))}
         </ul>
-        <Button text="Proceed" clickHandler={proceedHandler} />
+        {
+        cartDetails.length > 0 ?
+          <Button text="Proceed" clickHandler={proceedHandler} />
+          :
+          (
+            <div>
+              <p>Oops! No Items in Your Cart!</p>
+            </div>
+          )
+        }
       </div>
     </>
   );

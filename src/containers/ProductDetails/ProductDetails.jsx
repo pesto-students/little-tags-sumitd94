@@ -11,7 +11,7 @@ import { productActions, cartActions, alertActions } from '../../_actions';
 
 const ProductDetails = () => {
   const [productData, setProductData] = useState([]);
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const { categoryname, productId } = useParams();
   const [size, setSize] = useState();
   const dispatch = useDispatch();

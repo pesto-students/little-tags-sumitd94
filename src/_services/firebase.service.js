@@ -29,6 +29,16 @@ const signInWithGoogle = () => new Promise((resolve, reject) => {
   });
 });
 
+const signInWithFacebook = () => new Promise((resolve, reject) => {
+  const auth = firebase.auth();
+  const facebookProvider = new firebase.auth.FacebookAuthProvider();
+  auth.signInWithPopup(facebookProvider).then((res) => {
+    resolve(res);
+  }).catch((error) => {
+    reject(new Error(error.message));
+  });
+});
+
 const logoutGoogle = () => firebase.auth().signOut();
 
-export { signInWithGoogle, logoutGoogle };
+export { signInWithGoogle, signInWithFacebook, logoutGoogle };
