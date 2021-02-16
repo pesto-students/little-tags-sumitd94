@@ -109,3 +109,28 @@
 .productDetails p {
   text-align: left;
 }
+
+@media (max-width: 620px) {
+  .productLists ul li {
+    height: 250px;
+  }
+
+  .productContainer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .productContainer img {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .productLists {
+    width: 80%;
+  }
+
+  .productDetails {
+    padding-left: 0;
+    width: 100%;
+  }
+}
