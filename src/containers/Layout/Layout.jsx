@@ -29,6 +29,7 @@ const Layout = ({ children }) => {
 
   const toggleModalHandler = () => {
     setShowModal((prevState) => !prevState);
+    sideDrawerClosedHandler();
   };
 
   return (
@@ -40,6 +41,7 @@ const Layout = ({ children }) => {
       <SideDrawer
         open={state.showSideDrawer}
         closed={sideDrawerClosedHandler}
+        toggleModalHandler={toggleModalHandler}
       />
       <main className={classNames.content}>
         { loggedIn === false && (
