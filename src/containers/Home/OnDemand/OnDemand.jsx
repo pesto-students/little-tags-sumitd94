@@ -1,40 +1,52 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
 import classNames from './OnDemand.module.css';
 
-const OnDemand = (props) => {
-  const redirectHandler = (category) => {
-    window.scrollTo(0, 0);
-    props.history.push(`/products/${category}`);
-  };
-
-  return (
-    <>
-      <div className={classNames.demandTitle}>
-        Most In Demand
-      </div>
-      <div className={classNames.demandSections}>
-        <div className={classNames.section1}>
-          <div className={classNames.tshirt} onClick={() => redirectHandler('men-clothing')}>
-            <p className={classNames.tagName}>T Shirt</p>
+const OnDemand = () => (
+  <>
+    <div className={classNames.demandTitle}>
+      Most In Demand
+    </div>
+    <div className={classNames.demandSections}>
+      <div className={classNames.leftSection}>
+        <NavLink to="/products/men-clothing">
+          <div className={classNames.categoryCard}>
+            <div className={[classNames.horizontalCard, classNames.tShirt].join(' ')} />
+            <div className={classNames.cardFooter}>
+              T Shirt
+            </div>
           </div>
-          <div className={classNames.jeans} onClick={() => redirectHandler('women-clothing')}>
-            <p className={classNames.tagName}>Jeans</p>
+        </NavLink>
+        <NavLink to="/products/women-clothing">
+          <div className={classNames.categoryCard}>
+            <div className={[classNames.horizontalCard, classNames.jeans].join(' ')} />
+            <div className={classNames.cardFooter}>
+              Jeans
+            </div>
           </div>
-        </div>
-        <div className={classNames.section2} onClick={() => redirectHandler('backpack')}>
-          <p className={classNames.tagName}>Backpack</p>
-        </div>
-        <div className={classNames.section3} onClick={() => redirectHandler('electronics')}>
-          <p className={classNames.tagName}>Accessories</p>
-        </div>
+        </NavLink>
       </div>
+      <div className={classNames.rightSection}>
+        <NavLink to="/products/backpack">
+          <div className={classNames.categoryCard}>
+            <div className={[classNames.verticalCard, classNames.backpack].join(' ')} />
+            <div className={classNames.cardFooter}>
+              Backpack
+            </div>
+          </div>
+        </NavLink>
+        <NavLink to="/products/electronics">
+          <div className={classNames.categoryCard}>
+            <div className={[classNames.verticalCard, classNames.accessories].join(' ')} />
+            <div className={classNames.cardFooter}>
+              Accessories
+            </div>
+          </div>
+        </NavLink>
+      </div>
+    </div>
 
-    </>
-  );
-};
+  </>
+);
 
 export default withRouter(OnDemand);
