@@ -17,3 +17,9 @@
   box-shadow: 0 0 16px 0 rgba(40, 44, 181, 0.16);
   background-color: #ffffff;
 }
+
+@media (max-width: 620px) {
+  .productLists ul li {
+    height: 250px;
+  }
+}

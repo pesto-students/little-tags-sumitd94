@@ -6,6 +6,11 @@
   font-size: 20px;
 }
 
+.pageNumbers {
+  margin: 0;
+  padding: 0;
+}
+
 .pageNumbers > li {
   user-select: none;
   cursor: pointer;
