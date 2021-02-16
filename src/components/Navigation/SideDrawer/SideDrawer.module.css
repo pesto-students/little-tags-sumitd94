@@ -59,11 +59,22 @@
   margin-bottom: 32px;
 }
 
-.logoutBtn {
+.actionBtn {
   cursor: pointer;
   width: 60%;
   margin: auto;
   padding: 16px;
   background-color: lightgray;
   border-radius: 15px;
+  outline: none;
+}
+
+.login {
+  display: inline-block;
+}
+
+@media (min-width: 40rem) {
+  .login {
+    display: none;
+  }
 }

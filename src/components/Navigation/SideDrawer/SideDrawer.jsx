@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,7 +8,7 @@ import classes from './SideDrawer.module.css';
 import Backdrop from '../../UI/Backdrop/Backdrop';
 import { userActions } from '../../../_actions';
 
-const sideDrawer = ({ open, closed }) => {
+const sideDrawer = ({ open, closed, toggleModalHandler }) => {
   let attachedClasses = [classes.SideDrawer, classes.Close];
   const loggedInUserDetails = useSelector((state) => state.authentication);
   const { loggedIn, user } = loggedInUserDetails;
@@ -45,9 +43,26 @@ const sideDrawer = ({ open, closed }) => {
           <NavigationItems />
         </nav>
         {loggedIn && (
-          <div className={classes.logoutBtn}>
-            <span onClick={(e) => logout(e)}>Logout</span>
+          <div
+            className={classes.actionBtn}
+            onClick={(e) => logout(e)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => logout(e)}
+          >
+            <span>Logout</span>
           </div>
+        )}
+        {!loggedIn && (
+        <div
+          className={[classes.actionBtn, classes.login].join(' ')}
+          onClick={() => toggleModalHandler()}
+          role="button"
+          onKeyDown={() => toggleModalHandler()}
+          tabIndex={0}
+        >
+          <span>Login</span>
+        </div>
         )}
       </div>
     </>
