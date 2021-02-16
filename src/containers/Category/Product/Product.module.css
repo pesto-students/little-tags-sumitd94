@@ -27,3 +27,18 @@
 .price {
   font-weight: bold;
 }
+
+@media (max-width: 620px) {
+  .productContainer {
+    flex-direction: column;
+  }
+
+  .productContainer p {
+    width: 90%;
+  }
+
+  .productContainer img {
+    width: 4rem;
+    height: 4rem;
+  }
+}
