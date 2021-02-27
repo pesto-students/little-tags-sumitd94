@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import classes from './Modal.module.css';
 import Backdrop from '../Backdrop/Backdrop';
@@ -13,6 +15,9 @@ const Modal = ({ show, modalClosed, children }) => (
         opacity: show ? '1' : '0',
       }}
     >
+      <span className={classes.crossIcon}>
+        <FontAwesomeIcon icon={faTimes} onClick={modalClosed} />
+      </span>
       {children}
     </div>
   </>
