@@ -120,6 +120,10 @@
   .verticalCard, .horizontalCard {
     width: 20rem;
   }
+
+  .demandTitle {
+    font-size: 32px;
+  }
 }
 
 @media (max-width: 360px) {

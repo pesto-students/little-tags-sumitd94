@@ -55,3 +55,10 @@
 .newAddress p {
   display: inline;
 }
+
+@media (max-width: 568px) {
+  .addressLists {
+    width: 90%;
+    margin: auto;
+  }
+}
