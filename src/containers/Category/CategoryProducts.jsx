@@ -11,6 +11,7 @@ const CategoryProducts = () => {
   const { categoryname } = useParams();
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.allproducts);
+  const alert = useSelector((state) => state.alert);
   const [currentPage, setCurrentPage] = useState(1);
   const [currentProduct, setCurrentProduct] = useState([]);
   const [totalProducts, setTotalProducts] = useState(null);
@@ -41,7 +42,7 @@ const CategoryProducts = () => {
   }, [products, currentPage]);
   return (
     <>
-      {currentProduct.length === 0 && <Spinner />}
+      {currentProduct.length === 0 && alert.type !== 'alert-success' && <Spinner />}
       <div className={classNames.productLists}>
         <h2>
           All
