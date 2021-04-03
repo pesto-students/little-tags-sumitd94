@@ -45,41 +45,38 @@ const Cart = ({ history }) => {
           Your Cart
         </h2>
         <ul>
-          {cartDetails.length > 0 && cartDetails.map((product, index) => {
-            const imgUrl = product.productData[0].image.replace('fakestoreapi', 'fakestoreapi.herokuapp');
-            return (
-              <li key={product.productid}>
-                <div className={classNames.productContainer}>
-                  <img src={imgUrl} alt={product.productData[0].title} />
-                  <div className={classNames.productDetails}>
-                    <p>{product.productData[0].title}</p>
-                    <div className={classNames.quantityContainer}>
-                      <div
-                        className={classNames.valueBtn}
-                        id={classNames.decrease}
-                        onClick={() => decreaseQuantity(product, index)}
-                      >
-                        -
-                      </div>
-                      <input className={classNames.number} type="number" value={product.quantity} />
-                      <div
-                        className={classNames.valueBtn}
-                        id={classNames.increase}
-                        onClick={() => increaseQuantity(product, index)}
-                      >
-                        +
-                      </div>
+          {cartDetails.length > 0 && cartDetails.map((product, index) => (
+            <li key={product.productid}>
+              <div className={classNames.productContainer}>
+                <img src={product.productData[0].image} alt={product.productData[0].title} />
+                <div className={classNames.productDetails}>
+                  <p>{product.productData[0].title}</p>
+                  <div className={classNames.quantityContainer}>
+                    <div
+                      className={classNames.valueBtn}
+                      id={classNames.decrease}
+                      onClick={() => decreaseQuantity(product, index)}
+                    >
+                      -
+                    </div>
+                    <input className={classNames.number} type="number" value={product.quantity} />
+                    <div
+                      className={classNames.valueBtn}
+                      id={classNames.increase}
+                      onClick={() => increaseQuantity(product, index)}
+                    >
+                      +
                     </div>
                   </div>
-                  <p className={classNames.price}>
-                    $
-                    {' '}
-                    {product.productData[0].price * product.quantity}
-                  </p>
                 </div>
-              </li>
-            );
-          })}
+                <p className={classNames.price}>
+                  $
+                  {' '}
+                  {product.productData[0].price * product.quantity}
+                </p>
+              </div>
+            </li>
+          ))}
         </ul>
         {
         cartDetails.length > 0 ?

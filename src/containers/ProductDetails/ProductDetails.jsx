@@ -63,16 +63,10 @@ const ProductDetails = () => {
     }
   };
 
-  let imgUrl = '';
-
-  if (productData[0]) {
-    imgUrl = productData[0].image.replace('fakestoreapi', 'fakestoreapi.herokuapp');
-  }
-
   return (
     <div className={classNames.productDetailsContainer}>
       <div className={classNames.productImage}>
-        <img src={imgUrl} alt="title" />
+        <img src={productData[0] && productData[0].image} alt="title" />
       </div>
       <div className={classNames.productDetails}>
         <p><b>{productData[0] && productData[0].title}</b></p>

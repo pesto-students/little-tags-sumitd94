@@ -1,4 +1,4 @@
-const baseUrl = 'https://fakestoreapi.herokuapp.com/products';
+const baseUrl = 'https://fakestoreapi.com/products';
 
 const productService = {
   getAllProduct() {

@@ -10,11 +10,9 @@ const Product = ({ product, history, categoryname }) => {
     history.push(`/product/${categoryname}/${productID}`);
   };
 
-  const imgUrl = product.image.replace('fakestoreapi', 'fakestoreapi.herokuapp');
-
   return (
     <div className={classNames.productContainer} onClick={() => productDetailsHandler(product.id)}>
-      <img src={imgUrl} alt={product.title} />
+      <img src={product.image} alt={product.title} />
       <p>{product.title}</p>
       <p className={classNames.price}>
         $
