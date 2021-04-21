@@ -11,6 +11,7 @@
 .productContainer img {
   width: 20%;
   height: 80%;
+  border-radius: 10%;
 }
 
 .productContainer p {

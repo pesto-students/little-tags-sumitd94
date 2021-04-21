@@ -6,21 +6,15 @@ import { alertActions } from '.';
 
 function getAllProducts(category) {
   return async (dispatch) => {
-    let productLists;
     try {
-      productLists = await productService.getAllProduct();
-      const lowercategory = category.toLowerCase();
+      const { products } = await productService.getAllProduct(category);
+      console.log(products);
 
-      if (Array.isArray(productLists)) {
-        productLists = productLists.filter((val) => {
-          const categorySlug = val.category.toLowerCase().replace(/ /g, '-');
-          return categorySlug === lowercategory;
-        });
-
-        if (productLists.length > 0) {
+      if (Array.isArray(products)) {
+        if (products.length > 0) {
           dispatch({
             type: productConstants.GETALL,
-            productList: productLists,
+            productList: products,
             category,
           });
         } else {

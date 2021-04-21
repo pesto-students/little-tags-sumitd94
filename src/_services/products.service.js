@@ -1,11 +1,13 @@
-const baseUrl = 'https://fakestoreapi.com/products';
+const baseUrl = 'https://backendmasters-littletags.netlify.app/products';
 
 const productService = {
-  getAllProduct() {
+  getAllProduct(category) {
     return new Promise((resolve, reject) => {
-      fetch(baseUrl, {
-        headers: {},
-        referrerPolicy: 'strict-origin-when-cross-origin',
+      fetch(`${baseUrl}/${category}`, {
+        headers: {
+          Origin: 'https://backendmasters-littletags.netlify.app',
+        },
+        credentials: 'include',
         method: 'GET',
         mode: 'cors',
       }).then(async (res) => {

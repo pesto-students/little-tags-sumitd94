@@ -17,7 +17,7 @@ const OnDemand = () => (
             </div>
           </div>
         </NavLink>
-        <NavLink to="/products/women-clothing">
+        <NavLink to="/products/jeans">
           <div className={classNames.categoryCard}>
             <div className={[classNames.horizontalCard, classNames.jeans].join(' ')} />
             <div className={classNames.cardFooter}>

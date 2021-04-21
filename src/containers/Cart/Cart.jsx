@@ -48,7 +48,7 @@ const Cart = ({ history }) => {
           {cartDetails.length > 0 && cartDetails.map((product, index) => (
             <li key={product.productid}>
               <div className={classNames.productContainer}>
-                <img src={product.productData[0].image} alt={product.productData[0].title} />
+                <img src={`/images/${product.productData[0].image}`} alt={product.productData[0].title} />
                 <div className={classNames.productDetails}>
                   <p>{product.productData[0].title}</p>
                   <div className={classNames.quantityContainer}>

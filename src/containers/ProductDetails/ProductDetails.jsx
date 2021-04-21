@@ -19,10 +19,12 @@ const ProductDetails = () => {
   const { loggedIn } = useSelector((state) => state.authentication);
 
   useEffect(() => {
+    console.log(allProducts);
     if (categoryname in allProducts) {
       const currentProduct = allProducts[categoryname].filter((product) => (
-        product.id === parseInt(productId, 10)
+        product.id.toString() === productId.toString()
       ));
+      console.log(currentProduct);
       setProductData(currentProduct);
     } else {
       dispatch(productActions.getAllProducts(categoryname));
@@ -66,7 +68,7 @@ const ProductDetails = () => {
   return (
     <div className={classNames.productDetailsContainer}>
       <div className={classNames.productImage}>
-        <img src={productData[0] && productData[0].image} alt="title" />
+        <img src={productData[0] && `/images/${productData[0].image}`} alt="title" />
       </div>
       <div className={classNames.productDetails}>
         <p><b>{productData[0] && productData[0].title}</b></p>
