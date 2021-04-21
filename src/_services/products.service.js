@@ -1,4 +1,4 @@
-const baseUrl = 'https://backendmasters-littletags.netlify.app/products';
+const baseUrl = 'https://api-littletags.herokuapp.com/products';
 
 const productService = {
   getAllProduct(category) {
