@@ -15,7 +15,7 @@ const CategoryProducts = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentProduct, setCurrentProduct] = useState([]);
   const [totalProducts, setTotalProducts] = useState(null);
-  const pageLimit = 2;
+  const pageLimit = 4;
 
   const handlePageClick = (e) => {
     setCurrentPage(Number(e.target.id));
@@ -39,7 +39,7 @@ const CategoryProducts = () => {
 
       setTotalProducts(products[categoryname].length);
     }
-  }, [products, currentPage]);
+  }, [products, currentPage, categoryname]);
   return (
     <>
       {currentProduct.length === 0 && alert.type !== 'alert-success' && <Spinner />}
