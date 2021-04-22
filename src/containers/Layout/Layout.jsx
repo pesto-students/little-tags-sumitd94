@@ -10,7 +10,7 @@ import Modal from '../../components/UI/Modal/Modal';
 import Login from '../../components/Auth/Login/Login';
 
 const Layout = ({ children }) => {
-  const [state, setState] = useState({ showSideDrawer: false });
+  const [showSideDrawer, setShowSideDrawer] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const firstTime = useSelector((state) => state.authentication.firstTime);
   const loggedIn = useSelector((state) => state.authentication.loggedIn);
@@ -19,17 +19,12 @@ const Layout = ({ children }) => {
     setShowModal(firstTime);
   }, []);
 
-  const sideDrawerClosedHandler = () => {
-    setState({ showSideDrawer: false });
-  };
-
   const sideDrawerToggleHandler = () => {
-    setState((prevState) => ({ showSideDrawer: !prevState.showSideDrawer }));
+    setShowSideDrawer((prevState) => !prevState);
   };
 
   const toggleModalHandler = () => {
     setShowModal((prevState) => !prevState);
-    sideDrawerClosedHandler();
   };
 
   return (
@@ -39,8 +34,8 @@ const Layout = ({ children }) => {
         toggleModalHandler={toggleModalHandler}
       />
       <SideDrawer
-        open={state.showSideDrawer}
-        closed={sideDrawerClosedHandler}
+        showSideDrawer={showSideDrawer}
+        sideDrawerToggle={sideDrawerToggleHandler}
         toggleModalHandler={toggleModalHandler}
       />
       <main className={classNames.content}>

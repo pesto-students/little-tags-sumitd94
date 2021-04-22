@@ -8,7 +8,7 @@ import classes from './SideDrawer.module.css';
 import Backdrop from '../../UI/Backdrop/Backdrop';
 import { userActions } from '../../../_actions';
 
-const sideDrawer = ({ open, closed, toggleModalHandler }) => {
+const sideDrawer = ({ showSideDrawer, sideDrawerToggle, toggleModalHandler }) => {
   let attachedClasses = [classes.SideDrawer, classes.Close];
   const loggedInUserDetails = useSelector((state) => state.authentication);
   const { loggedIn, user } = loggedInUserDetails;
@@ -18,15 +18,15 @@ const sideDrawer = ({ open, closed, toggleModalHandler }) => {
     dispatch(userActions.logout());
   };
 
-  if (open) {
+  if (showSideDrawer) {
     attachedClasses = [classes.SideDrawer, classes.Open];
   }
   return (
     <>
-      <Backdrop show={open} clicked={closed} />
+      <Backdrop show={showSideDrawer} clicked={sideDrawerToggle} />
       <div className={attachedClasses.join(' ')}>
         <div className={classes.brandName}>
-          <FontAwesomeIcon icon={faTimes} onClick={closed} />
+          <FontAwesomeIcon icon={faTimes} onClick={sideDrawerToggle} />
           <h2>Little Tags</h2>
         </div>
         {loggedIn && (
@@ -40,7 +40,7 @@ const sideDrawer = ({ open, closed, toggleModalHandler }) => {
         </div>
         )}
         <nav>
-          <NavigationItems />
+          <NavigationItems sideDrawerToggle={sideDrawerToggle} />
         </nav>
         {loggedIn && (
           <div
