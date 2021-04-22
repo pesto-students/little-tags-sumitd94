@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
-import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
+import {
+  Route, Switch, Redirect, BrowserRouter as Router,
+} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import { alertActions } from './_actions';
@@ -61,6 +63,7 @@ function App() {
             <Route path="/thank-you" exact component={ThankYou} />
             <Route path="/past-orders" exact component={PastOrders} />
             <Route path="/" exact component={Home} />
+            <Redirect to="/" />
           </Switch>
         </Layout>
       </Router>

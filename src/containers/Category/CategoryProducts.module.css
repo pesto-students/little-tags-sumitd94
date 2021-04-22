@@ -22,4 +22,8 @@
   .productLists ul li {
     height: 250px;
   }
+
+  .productLists {
+    width: 80%;
+  }
 }
