@@ -32,3 +32,10 @@
   text-align: left;
   color: #6f6f6f;
 }
+
+@media (max-width: 580px) {
+  .ContactInfo {
+    height: auto;
+    width: 80%;
+  }
+}

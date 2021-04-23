@@ -36,3 +36,11 @@
 .subscribeForm {
   display: flex;
 }
+
+@media (max-width: 580px) {
+  .StayInTouch {
+    height: auto;
+    width: 80%;
+    padding-left: 16px;
+  }
+}
