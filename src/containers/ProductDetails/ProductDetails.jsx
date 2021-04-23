@@ -9,6 +9,8 @@ import classNames from './ProductDetails.module.css';
 import ProductSizes from './ProductSizes/ProductSizes';
 import { productActions, cartActions, alertActions } from '../../_actions';
 
+import ImageCarousel from '../../components/UI/ImageCarousel/ImageCarousel';
+
 const ProductDetails = () => {
   const [productData, setProductData] = useState([]);
   const [quantity, setQuantity] = useState(1);
@@ -68,7 +70,7 @@ const ProductDetails = () => {
   return (
     <div className={classNames.productDetailsContainer}>
       <div className={classNames.productImage}>
-        <img src={productData[0] && `/images/${productData[0].image}`} alt="title" />
+        {productData[0] && <ImageCarousel images={productData[0].image} height={400} width={300} />}
       </div>
       <div className={classNames.productDetails}>
         <p><b>{productData[0] && productData[0].title}</b></p>
