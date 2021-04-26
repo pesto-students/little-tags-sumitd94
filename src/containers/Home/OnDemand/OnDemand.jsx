@@ -27,15 +27,15 @@ const OnDemand = () => (
         </NavLink>
       </div>
       <div className={classNames.rightSection}>
-        <NavLink to="/products/backpack">
+        <NavLink to="/products/backpacks">
           <div className={classNames.categoryCard}>
             <div className={[classNames.verticalCard, classNames.backpack].join(' ')} />
             <div className={classNames.cardFooter}>
-              Backpack
+              Backpacks
             </div>
           </div>
         </NavLink>
-        <NavLink to="/products/electronics">
+        <NavLink to="/products/accessories">
           <div className={classNames.categoryCard}>
             <div className={[classNames.verticalCard, classNames.accessories].join(' ')} />
             <div className={classNames.cardFooter}>

@@ -19,16 +19,16 @@ const NavigationItems = ({ sideDrawerToggle }) => {
       <h2>Categories</h2>
       <ul className={classNames.NavigationItemsList}>
         <li>
-          <NavLink to="/products/electronics">Accessories</NavLink>
+          <NavLink to="/products/accessories">Accessories</NavLink>
         </li>
         <li>
-          <NavLink to="/products/men-clothing">Shirts</NavLink>
+          <NavLink to="/products/men-clothing">T Shirt</NavLink>
         </li>
         <li>
-          <NavLink to="/products/jeans">Pants</NavLink>
+          <NavLink to="/products/jeans">Jeans</NavLink>
         </li>
         <li>
-          <NavLink to="/products/jackets">Jackets</NavLink>
+          <NavLink to="/products/backpacks">Backpacks</NavLink>
         </li>
       </ul>
       {loggedIn && (
