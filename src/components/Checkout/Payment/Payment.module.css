@@ -1,5 +1,5 @@
 .paymentContainer {
-  width: 50%;
+  width: 60%;
   margin: auto;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .paymentMethods {
-  width: 50%;
+  width: 60%;
   margin: auto;
 }
 
@@ -57,6 +57,17 @@
   flex-direction: row;
   align-items: center;
   padding: 4px 0px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .paymentContainer {
+    width: 70%;
+  }
+
+  .paymentMethods {
+    width: 70%;
+  }
 }
 
 @media (max-width: 568px) {
