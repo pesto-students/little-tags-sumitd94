@@ -3,10 +3,13 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import classNames from './ProductSizes.module.css';
 
-const ProductSizes = ({ selectSize }) => {
+const ProductSizes = ({ selectSize, category }) => {
 
   const [selectedSize, setSelectedSize] = useState(null);
-  const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
+  let sizes = [];
+
+  if (category === 'accessories' || category === 'backpacks') sizes = ['Onesize']
+  else sizes = ['S', 'M', 'L', 'XL', 'XXL']
 
   const handleSlection = (size) => {
     selectSize(size);
@@ -27,6 +30,7 @@ const ProductSizes = ({ selectSize }) => {
 
 ProductSizes.propTypes = {
   selectSize: PropTypes.func.isRequired,
+  category: PropTypes.string.isRequired,
 };
 
 export default ProductSizes;

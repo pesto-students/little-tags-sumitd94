@@ -82,7 +82,7 @@ const ProductDetails = () => {
           {productData[0] && productData[0].description}
         </p>
         <p><b>Size</b></p>
-        <ProductSizes selectSize={handleSize} />
+        <ProductSizes selectSize={handleSize} category={categoryname} />
         <div className={classNames.quantityContainer}>
           <div
             className={classNames.valueBtn}
