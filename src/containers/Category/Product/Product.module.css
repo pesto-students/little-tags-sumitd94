@@ -32,6 +32,7 @@
 @media (max-width: 620px) {
   .productContainer {
     flex-direction: column;
+    justify-content: center;
   }
 
   .productContainer p {
@@ -39,7 +40,14 @@
   }
 
   .productContainer img {
-    width: 4rem;
-    height: 4rem;
+    width: 10rem;
+    height: 11rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .productContainer img {
+    width: 9rem;
+    height: 10rem;
   }
 }
