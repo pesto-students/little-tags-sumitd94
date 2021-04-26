@@ -2,12 +2,19 @@ import React from 'react';
 import classNames from './HomeBanner.module.css';
 
 const HomeBanner = () => (
-  <section className={classNames.HomeBanner}>
-    <div className={classNames.bannerText}>
-      <h2>Online Free Market for Clothes</h2>
-      <p>Its time to recycle</p>
+  <>
+    <div className={classNames.HomeBanner} />
+    <div className={classNames.bannerContent}>
+      <div className={classNames.titleContainer}>
+        <div className={classNames.heading}>
+          Online Flee market for clothes
+        </div>
+        <div className={classNames.subHeading}>
+          It‘s time to recycle
+        </div>
+      </div>
     </div>
-  </section>
+  </>
 );
 
 export default HomeBanner;

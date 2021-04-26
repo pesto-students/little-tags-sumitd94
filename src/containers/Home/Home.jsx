@@ -2,11 +2,13 @@ import React from 'react';
 import HomeBanner from './HomeBanner/HomeBanner';
 import OnDemand from './OnDemand/OnDemand';
 
+import classNames from './Home.module.css';
+
 const Home = () => (
-  <main>
+  <div className={classNames.homeContainer}>
     <HomeBanner />
     <OnDemand />
-  </main>
+  </div>
 );
 
 export default Home;
