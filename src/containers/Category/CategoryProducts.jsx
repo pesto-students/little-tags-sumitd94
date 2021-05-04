@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { productActions } from '../../_actions';
+import fetchProducts from '../../store/Products/Actions';
 import classNames from './CategoryProducts.module.css';
 import Product from './Product/Product';
 import Pagination from './Product/Pagination';
@@ -23,7 +23,7 @@ const CategoryProducts = () => {
 
   useEffect(() => {
     if (!(categoryname.toString() in products)) {
-      dispatch(productActions.getAllProducts(categoryname));
+      dispatch(fetchProducts(categoryname));
     }
 
     if (categoryname in products) {

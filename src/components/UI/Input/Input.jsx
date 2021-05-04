@@ -3,7 +3,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import PropTypes from 'prop-types';
-import messages from '../../../_helpers/validationMessages';
+import messages from '../../../store/Helpers/ValidateMessage';
 import classNames from './Input.module.css';
 
 const Input = ({

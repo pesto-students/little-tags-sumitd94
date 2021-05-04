@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { orderActions } from '../../../_actions';
+import orderActions from '../../../store/Orders/Actions';
 import classNames from './Payment.module.css';
 import Button from '../../UI/Button/Button';
 

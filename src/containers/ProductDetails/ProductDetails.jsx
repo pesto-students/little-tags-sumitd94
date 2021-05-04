@@ -7,7 +7,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import classNames from './ProductDetails.module.css';
 import ProductSizes from './ProductSizes/ProductSizes';
-import { productActions, cartActions, alertActions } from '../../_actions';
+import productActions from '../../store/Products/Actions';
+import alertActions from '../../store/Alerts/Actions';
+import cartActions from '../../store/Cart/Actions';
 
 import ImageCarousel from '../../components/UI/ImageCarousel/ImageCarousel';
 

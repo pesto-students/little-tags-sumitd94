@@ -6,7 +6,8 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import classNames from './Address.module.css';
 import Button from '../../UI/Button/Button';
-import { addressActions, alertActions } from '../../../_actions';
+import alertActions from '../../../store/Alerts/Actions';
+import addressActions from '../../../store/Address/Actions';
 
 const Address = ({ history }) => {
   const { userAddress, deliveryAddress } = useSelector((state) => state.address);

@@ -1,4 +1,8 @@
-import { cartConstants } from '../_constants';
+import { CART_CONSTANTS } from '../../AppConstants';
+
+const {
+  ADDCART, UPDATECART, REMOVECART, CLEARCART,
+} = CART_CONSTANTS;
 
 const initialState = {
   allCarts: [],
@@ -12,19 +16,19 @@ function removeFromCart(allCart, pid) {
   return newCart;
 }
 
-function cart(state = initialState, action) {
+function reducer(state = initialState, action) {
   switch (action.type) {
-    case cartConstants.ADDCART:
+    case ADDCART:
       return { allCarts: [...state.allCarts, action.cartdetails] };
-    case cartConstants.UPDATECART:
+    case UPDATECART:
       return { allCarts: action.cartdetails };
-    case cartConstants.REMOVECART:
+    case REMOVECART:
       return removeFromCart(state.allCarts, action.productid);
-    case cartConstants.CLEARCART:
+    case CLEARCART:
       return { allCarts: [] };
     default:
       return state;
   }
 }
 
-export default cart;
+export default reducer;

@@ -1,14 +1,14 @@
-import { addressConstants } from '../_constants';
+import { ADDRESS_CONSTANTS } from '../../AppConstants';
 
 function addAddress(addressObject) {
   return (dispatch) => {
-    dispatch({ type: addressConstants.ADDADDRESS, address: addressObject });
+    dispatch({ type: ADDRESS_CONSTANTS.ADDADDRESS, address: addressObject });
   };
 }
 
 function addDeliveryAddress(addressObject) {
   return (dispatch) => {
-    dispatch({ type: addressConstants.DELIVERYADDRESS, address: addressObject });
+    dispatch({ type: ADDRESS_CONSTANTS.DELIVERYADDRESS, address: addressObject });
   };
 }
 

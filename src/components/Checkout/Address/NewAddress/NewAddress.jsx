@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import Input from '../../../UI/Input/Input';
 import classNames from './NewAddress.module.css';
-import { addressActions } from '../../../../_actions';
+import addressActions from '../../../../store/Address/Actions';
 
 const NewAddress = ({ history }) => {
   const { orderForm } = useSelector((state) => state.address);

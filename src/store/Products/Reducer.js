@@ -1,12 +1,14 @@
-import { productConstants } from '../_constants';
+import { PRODUCT_CONSTANTS } from '../../AppConstants';
+
+const { GETALL } = PRODUCT_CONSTANTS;
 
 const initialState = {
   allproducts: {},
 };
 
-function products(state = initialState, action) {
+function reducer(state = initialState, action) {
   switch (action.type) {
-    case productConstants.GETALL:
+    case GETALL:
       return {
         allproducts: {
           ...state.allproducts,
@@ -18,4 +20,4 @@ function products(state = initialState, action) {
   }
 }
 
-export default products;
+export default reducer;

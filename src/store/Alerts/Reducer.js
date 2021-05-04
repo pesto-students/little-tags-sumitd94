@@ -1,27 +1,31 @@
-import { alertConstants } from '../_constants';
+import { ALERT_CONSTANTS } from '../../AppConstants';
 
-function alert(state = {}, action) {
+const {
+  SUCCESS, ERROR, INFO, CLEAR,
+} = ALERT_CONSTANTS;
+
+const reducer = (state = {}, action) => {
   switch (action.type) {
-    case alertConstants.SUCCESS:
+    case SUCCESS:
       return {
         type: 'alert-success',
         message: action.message,
       };
-    case alertConstants.ERROR:
+    case ERROR:
       return {
         type: 'alert-danger',
         message: action.message,
       };
-    case alertConstants.INFO:
+    case INFO:
       return {
         type: 'alert-info',
         message: action.message,
       };
-    case alertConstants.CLEAR:
+    case CLEAR:
       return {};
     default:
       return state;
   }
-}
+};
 
-export default alert;
+export default reducer;

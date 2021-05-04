@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import classNames from './Cart.module.css';
 import Button from '../../components/UI/Button/Button';
-import cartActions from '../../_actions/cart.actions';
+import cartActions from '../../store/Cart/Actions';
 
 const Cart = ({ history }) => {
   const cartDetails = useSelector((state) => state.cart.allCarts);

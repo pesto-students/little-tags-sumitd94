@@ -1,18 +1,20 @@
-import { orderConstants } from '../_constants';
+import { ORDER_CONSTANTS } from '../../AppConstants';
+
+const { ORDER } = ORDER_CONSTANTS;
 
 const initialState = {
   allOrders: [],
 };
 
-function order(state = initialState, action) {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case orderConstants.ORDER:
+    case ORDER:
       return {
         allOrders: [...state.allOrders, ...action.carts],
       };
     default:
       return state;
   }
-}
+};
 
-export default order;
+export default reducer;

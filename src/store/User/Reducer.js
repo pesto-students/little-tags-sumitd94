@@ -1,8 +1,12 @@
-import userConstants from '../_constants/user.constants';
+import { USER_CONSTANTS } from '../../AppConstants';
 
-function setForFirstTime() {
+const {
+  LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT, LOGIN_FAILURE,
+} = USER_CONSTANTS;
+
+const setForFirstTime = () => {
   localStorage.setItem('littleTags', JSON.stringify({ visited: 'yes' }));
-}
+};
 
 const user = localStorage.getItem('littleTags');
 let initialState = { firstTime: true };
@@ -24,26 +28,26 @@ if (userLoggedinStatus) {
   initialState.loggedIn = false;
 }
 
-function manageSuccessLogin(data) {
+const manageSuccessLogin = (data) => {
   localStorage.setItem('loggedIn', data.loggedIn);
   localStorage.setItem('user', JSON.stringify(data.user));
   return data;
-}
+};
 
-function manageLogout() {
+const manageLogout = () => {
   localStorage.clear();
   setForFirstTime();
   return {};
-}
+};
 
-function authentication(state = initialState, action) {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case userConstants.LOGIN_REQUEST:
+    case LOGIN_REQUEST:
       return {
         loggingIn: true,
         user: action.user,
       };
-    case userConstants.LOGIN_SUCCESS:
+    case LOGIN_SUCCESS:
       return manageSuccessLogin({
         loggedIn: true,
         user: {
@@ -52,13 +56,13 @@ function authentication(state = initialState, action) {
           displayName: action.user.displayName,
         },
       });
-    case userConstants.LOGIN_FAILURE:
+    case LOGIN_FAILURE:
       return {};
-    case userConstants.LOGOUT:
+    case LOGOUT:
       return manageLogout();
     default:
       return state;
   }
-}
+};
 
-export default authentication;
+export default reducer;

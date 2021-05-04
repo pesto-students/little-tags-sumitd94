@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import classNames from './Login.module.css';
 import LoginMethod from './LoginMethod/LoginMethod';
-import userActions from '../../../_actions/user.actions';
+import userActions from '../../../store/User/Actions';
 
 const Login = () => {
   const dispatch = useDispatch();

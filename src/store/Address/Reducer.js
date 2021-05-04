@@ -1,4 +1,4 @@
-import { addressConstants } from '../_constants';
+import { ADDRESS_CONSTANTS } from '../../AppConstants';
 
 const elementConfigObject = (type, placeholder) => (
   {
@@ -86,15 +86,15 @@ const initialState = {
   deliveryAddress: '',
 };
 
-function address(state = initialState, action) {
+function reducer(state = initialState, action) {
   console.log(action);
   switch (action.type) {
-    case addressConstants.ADDADDRESS:
+    case ADDRESS_CONSTANTS.ADDADDRESS:
       return {
         ...state,
         userAddress: [...state.userAddress, action.address.data],
       };
-    case addressConstants.DELIVERYADDRESS:
+    case ADDRESS_CONSTANTS.DELIVERYADDRESS:
       return {
         ...state,
         deliveryAddress: action.address,
@@ -104,4 +104,4 @@ function address(state = initialState, action) {
   }
 }
 
-export default address;
+export default reducer;

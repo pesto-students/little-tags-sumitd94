@@ -1,7 +1,9 @@
-import { userConstants } from '../_constants';
-import alertActions from './alert.actions';
-import { history } from '../_helpers';
-import { logoutGoogle, signInWithGoogle, signInWithFacebook } from '../_services';
+import { USER_CONSTANTS } from '../../AppConstants';
+import alertActions from '../Alerts/Actions';
+import History from '../Helpers/History';
+import { logoutGoogle, signInWithGoogle, signInWithFacebook } from '../../utils/firebase';
+
+const { LOGIN_SUCCESS, LOGOUT } = USER_CONSTANTS;
 
 function login(type) {
   return async (dispatch) => {
@@ -14,9 +16,9 @@ function login(type) {
       }
       if (res) {
         dispatch(alertActions.success('Login Success'));
-        dispatch({ type: userConstants.LOGIN_SUCCESS, user: res.user });
+        dispatch({ type: LOGIN_SUCCESS, user: res.user });
       } else {
-        history.push('/');
+        History.push('/');
       }
     } catch (err) {
       dispatch(alertActions.error(err.toString()));
@@ -29,7 +31,7 @@ function logout() {
     console.log('logoutclick');
     logoutGoogle();
     dispatch(alertActions.success('Successfully Logout'));
-    dispatch({ type: userConstants.LOGOUT });
+    dispatch({ type: LOGOUT });
     window.location.replace('/');
   };
 }

@@ -6,7 +6,7 @@ import { faUserCircle } from '@fortawesome/free-regular-svg-icons';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import classes from './SideDrawer.module.css';
 import Backdrop from '../../UI/Backdrop/Backdrop';
-import { userActions } from '../../../_actions';
+import userActions from '../../../store/User/Actions';
 
 const sideDrawer = ({ showSideDrawer, sideDrawerToggle, toggleModalHandler }) => {
   let attachedClasses = [classes.SideDrawer, classes.Close];

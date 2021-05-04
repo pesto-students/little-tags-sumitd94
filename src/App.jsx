@@ -4,8 +4,8 @@ import {
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
-import { alertActions } from './_actions';
-import { history } from './_helpers';
+import alertActions from './store/Alerts/Actions';
+import History from './store/Helpers/History';
 import Layout from './containers/Layout/Layout';
 import Home from './containers/Home/Home';
 import CategoryProducts from './containers/Category/CategoryProducts';
@@ -26,7 +26,7 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     // location, action as param
-    history.listen(() => {
+    History.listen(() => {
       // clear alert on location change
       dispatch(alertActions.clear());
     });
