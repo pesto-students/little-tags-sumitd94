@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Redirect, Switch } from 'react-router-dom';
 
 import Home from '../containers/Home/Home';
 import PastOrders from '../components/Orders/PastOrders';
@@ -13,16 +13,18 @@ import Cart from '../containers/Cart/Cart';
 
 const AppRouter = () => (
   <>
-    <Route path="/product/:categoryname/:productId" exact component={ProductDetails} />
-    <Route path="/products/:categoryname" exact component={CategoryProducts} />
-    <Route path="/cart" exact component={Cart} />
-    <Route path="/new-address" exact component={NewAddress} />
-    <Route path="/checkout/payment" exact component={Payment} />
-    <Route path="/checkout" exact component={Address} />
-    <Route path="/thank-you" exact component={ThankYou} />
-    <Route path="/past-orders" exact component={PastOrders} />
-    <Route path="/" exact component={Home} />
-    <Redirect to="/" />
+    <Switch>
+      <Route path="/product/:categoryname/:productId" exact component={ProductDetails} />
+      <Route path="/products/:categoryname" exact component={CategoryProducts} />
+      <Route path="/cart" exact component={Cart} />
+      <Route path="/new-address" exact component={NewAddress} />
+      <Route path="/checkout/payment" exact component={Payment} />
+      <Route path="/checkout" exact component={Address} />
+      <Route path="/thank-you" exact component={ThankYou} />
+      <Route path="/past-orders" exact component={PastOrders} />
+      <Route path="/" exact component={Home} />
+      <Redirect to="/" />
+    </Switch>
   </>
 );
 

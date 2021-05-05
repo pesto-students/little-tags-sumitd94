@@ -1,19 +1,30 @@
 import { PRODUCT_CONSTANTS } from '../../AppConstants';
 
-const { GETALL } = PRODUCT_CONSTANTS;
+const { GETALL, FILTERED_PRODUCTS, SPINNER } = PRODUCT_CONSTANTS;
 
 const initialState = {
-  allproducts: {},
+  allProducts: [],
+  filteredProducts: [],
+  isFetchingProducts: false,
 };
 
 function reducer(state = initialState, action) {
   switch (action.type) {
     case GETALL:
       return {
-        allproducts: {
-          ...state.allproducts,
-          [action.category]: action.productList,
-        },
+        ...state,
+        allProducts: action.products,
+      };
+    case FILTERED_PRODUCTS:
+      return {
+        ...state,
+        isFetchingProducts: false,
+        filteredProducts: action.filteredProducts,
+      };
+    case SPINNER:
+      return {
+        ...state,
+        isFetchingProducts: !state.isFetchingProducts,
       };
     default:
       return state;

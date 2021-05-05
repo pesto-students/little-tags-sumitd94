@@ -3,6 +3,7 @@
   overflow: hidden;
   margin: 0;
   padding-top: 12px;
+  margin: auto;
 }
 
 .carousel-frame {
@@ -74,9 +75,8 @@
   background: #000;
 }
 
-@media (max-width: 568px) {
-  /* .carousel {
-    width: 12rem;
-    height: 12rem;
-  } */
+@media (max-width: 520px) {
+  .carousel {
+    margin: 0;
+  }
 }

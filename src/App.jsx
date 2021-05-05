@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import {
-  Switch, BrowserRouter as Router,
+  BrowserRouter as Router,
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
@@ -46,9 +46,7 @@ function App() {
       </div>
       <Router>
         <Layout>
-          <Switch>
-            <AppRouter />
-          </Switch>
+          <AppRouter />
         </Layout>
       </Router>
       <ToastContainer />

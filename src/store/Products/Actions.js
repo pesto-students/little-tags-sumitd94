@@ -2,17 +2,16 @@ import getAllProducts from '../../utils/service-request';
 import { PRODUCT_CONSTANTS } from '../../AppConstants';
 import alertActions from '../Alerts/Actions';
 
-const { GETALL } = PRODUCT_CONSTANTS;
+const { GETALL, FILTERED_PRODUCTS, SPINNER } = PRODUCT_CONSTANTS;
 
-const fetchProducts = (category) => async (dispatch) => {
+const fetchProducts = () => async (dispatch) => {
   try {
-    const { products } = await getAllProducts(category);
+    const { products } = await getAllProducts();
 
     if (Array.isArray(products) && products.length > 0) {
       dispatch({
         type: GETALL,
-        productList: products,
-        category,
+        products,
       });
     } else {
       dispatch(alertActions.error('Oops! Cannot fetch products'));
@@ -24,4 +23,13 @@ const fetchProducts = (category) => async (dispatch) => {
   }
 };
 
-export default fetchProducts;
+const getFilteredProducts = (category, products) => (dispatch) => {
+  console.log(products);
+  const filteredProducts = products.filter((product) => product.category === category);
+  dispatch({ type: SPINNER });
+  setTimeout(() => {
+    dispatch({ type: FILTERED_PRODUCTS, filteredProducts });
+  }, 1000);
+};
+
+export { fetchProducts, getFilteredProducts };
