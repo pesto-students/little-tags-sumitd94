@@ -1,8 +1,8 @@
 const baseUrl = 'https://api-littletags.herokuapp.com/products';
 
-const getAllProduct = async (category) => {
+const getAllProducts = async () => {
   try {
-    const res = await fetch(`${baseUrl}/${category}`, {
+    const res = await fetch(baseUrl, {
       headers: {
         Origin: 'https://backendmasters-littletags.netlify.app',
       },
@@ -18,4 +18,4 @@ const getAllProduct = async (category) => {
   }
 };
 
-export default getAllProduct;
+export default getAllProducts;
