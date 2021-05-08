@@ -1,13 +1,9 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable max-len */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import ProductSizes from './ProductSizes/ProductSizes';
 import alertActions from '../../store/Alerts/Actions';
 import cartActions from '../../store/Cart/Actions';
 
@@ -109,6 +105,9 @@ const ProductDetails = () => {
           </ul>
           <div className="quantity-container">
             <div
+              role="button"
+              onKeyDown={() => decreaseQuantity()}
+              tabIndex={0}
               className="value-btn"
               id="decrease"
               onClick={() => decreaseQuantity()}
@@ -117,6 +116,9 @@ const ProductDetails = () => {
             </div>
             <input className="number" type="number" value={quantity} />
             <div
+              role="button"
+              onKeyDown={() => increaseQuantity()}
+              tabIndex={0}
               className="value-btn"
               id="increase"
               onClick={() => increaseQuantity()}
@@ -133,44 +135,6 @@ const ProductDetails = () => {
         </div>
       </div>
     </div>
-  // <div className={classNames.productDetailsContainer}>
-  //   <div className={classNames.productImage}>
-  //     {productData[0] && <ImageCarousel images={productData[0].image} height={400} width={300} />}
-  //   </div>
-  //   <div className={classNames.productDetails}>
-  //     <p><b>{productData[0] && productData[0].title}</b></p>
-  //     <p>
-  //       $
-  //       {productData[0] && productData[0].price}
-  //     </p>
-  //     <p className={classNames.productDesc}>
-  //       {productData[0] && productData[0].description}
-  //     </p>
-  //     <p><b>Size</b></p>
-  //     <ProductSizes selectSize={handleSize} category={categoryname} />
-  //     <div className={classNames.quantityContainer}>
-  //       <div
-  //         className={classNames.valueBtn}
-  //         id={classNames.decrease}
-  //         onClick={() => decreaseQuantity()}
-  //       >
-  //         -
-  //       </div>
-  //       <input className={classNames.number} type="number" value={quantity} />
-  //       <div
-  //         className={classNames.valueBtn}
-  //         id={classNames.increase}
-  //         onClick={() => increaseQuantity()}
-  //       >
-  //         +
-  //       </div>
-  //     </div>
-  //     <button type="button" className={classNames.CartButton} onClick={addToCart}>
-  //       <FontAwesomeIcon icon={faShoppingCart} />
-  //       ADD TO CART
-  //     </button>
-  //   </div>
-  // </div>
   );
 };
 

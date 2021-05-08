@@ -21,19 +21,17 @@ const CategoryProducts = () => {
   return (
     <>
       {isFetchingProducts && <Spinner />}
+      <h2 className={classNames.headingText}>
+        { categoryname === 'men-clothing' ? 'Mens Clothing' : categoryname }
+        {' '}
+        -
+        {' '}
+        <span>{`${filteredProducts.length} Items`}</span>
+      </h2>
       <div className={classNames.productLists}>
-        <h2>
-          All
-          {' '}
-          { categoryname === 'electronics' ? 'Accessories' : categoryname }
-        </h2>
-        <ul>
-          {filteredProducts.map((product) => (
-            <li key={product.id}>
-              <Product product={product} categoryname={categoryname} />
-            </li>
-          ))}
-        </ul>
+        {filteredProducts.map((product) => (
+          <Product product={product} categoryname={categoryname} />
+        ))}
       </div>
     </>
   );

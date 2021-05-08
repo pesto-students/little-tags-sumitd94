@@ -1,53 +1,77 @@
 .productContainer {
-  width: 100%;
-  height: 100%;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+  max-width: 208px;
+}
+
+.imageContainer {
+  position: relative;
+  width: fit-content;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.linkNoStyle {
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
+  border: none;
   cursor: pointer;
+  padding: 0;
 }
 
-.productContainer img {
-  width: 20%;
-  height: 80%;
-  border-radius: 10%;
+.productDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  flex-grow: 1;
+  text-align: left;
 }
 
-.productContainer p {
-  width: 30%;
-  font-family: Gotham;
-  font-size: 16px;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.21;
-  letter-spacing: normal;
-  color: #000000;
+.title {
+  margin: 0;
+}
+
+.brand {
+  margin: 10px 0;
+}
+
+.ratingBadge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  font-size: 1rem;
+  line-height: .75rem;
+  color: black;
+  background-color: white;
+  padding: .3rem;
+}
+
+.badgeStar {
+  color: #ffb400;
+  width: 1rem;
+  height: 1rem;
+  margin-right: .2rem;
+}
+
+.badgeNumber:not(:last-child) {
+  margin-right: .2rem;
+}
+
+.discount {
+  font-size: 1.1rem;
+  color: #ff3f6c;
+  font-weight: 500;
 }
 
 .price {
-  font-weight: bold;
-}
-
-@media (max-width: 620px) {
-  .productContainer {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .productContainer p {
-    width: 90%;
-  }
-
-  .productContainer img {
-    width: 10rem;
-    height: 11rem;
-  }
-}
-
-@media (max-width: 520px) {
-  .productContainer img {
-    width: 9rem;
-    height: 10rem;
-  }
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  font-weight: 700;
+  margin-top: 10px;
 }
