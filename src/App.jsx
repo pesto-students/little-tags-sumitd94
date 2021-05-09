@@ -10,6 +10,8 @@ import Layout from './containers/Layout/Layout';
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
 
+import ScrollToTop from './components/UI/ScrollToTop/ScrollToTop';
+
 import AppRouter from './appRouter/AppRouter';
 
 toast.configure();
@@ -45,6 +47,7 @@ function App() {
         { alert.message && alert.type === 'alert-info' ? showToast('info', alert.message) : '' }
       </div>
       <Router>
+        <ScrollToTop />
         <Layout>
           <AppRouter />
         </Layout>
