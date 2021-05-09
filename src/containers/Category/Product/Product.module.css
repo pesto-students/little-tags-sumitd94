@@ -1,0 +1,77 @@
+.productContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 208px;
+}
+
+.imageContainer {
+  position: relative;
+  width: fit-content;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.linkNoStyle {
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.productDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.title {
+  margin: 0;
+}
+
+.brand {
+  margin: 10px 0;
+}
+
+.ratingBadge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  font-size: 1rem;
+  line-height: .75rem;
+  color: black;
+  background-color: white;
+  padding: .3rem;
+}
+
+.badgeStar {
+  color: #ffb400;
+  width: 1rem;
+  height: 1rem;
+  margin-right: .2rem;
+}
+
+.badgeNumber:not(:last-child) {
+  margin-right: .2rem;
+}
+
+.discount {
+  font-size: 1.1rem;
+  color: #ff3f6c;
+  font-weight: 500;
+}
+
+.price {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  font-weight: 700;
+  margin-top: 10px;
+}

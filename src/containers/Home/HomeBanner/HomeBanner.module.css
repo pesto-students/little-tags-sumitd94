@@ -1,0 +1,44 @@
+.HomeBanner {
+  position: absolute;
+  width: 100%;
+  height: 80vh;
+  background-image: url(https://images.pexels.com/photos/994517/pexels-photo-994517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-size: cover;
+}
+
+.bannerContent {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #000;
+  opacity: .7;
+  color: #fff;
+}
+
+.heading {
+  font-size: 4rem;
+  margin: 0 auto;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bolder;
+}
+
+.subHeading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+@media (max-width: 450px) {
+  .heading {
+    font-size: 2.5rem;
+  }
+
+  .subHeading {
+    font-size: 2rem;
+  }
+}

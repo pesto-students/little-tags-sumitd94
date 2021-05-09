@@ -1,0 +1,32 @@
+.ContactData {
+  margin: 20px auto;
+  width: 80%;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 16px 0px;
+}
+
+.ContactData input {
+  display: block;
+}
+
+.submitBtn {
+  background-color: black;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin: 16px auto;
+  cursor: pointer;
+  width: 164px;
+}
+
+@media (max-width: 568px) {
+  .ContactData form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ContactData form div {
+    width: 100%;
+  }
+}

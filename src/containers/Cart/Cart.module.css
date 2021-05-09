@@ -1,0 +1,31 @@
+.cartContainer {
+  display: flex;
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+}
+
+.cartContainer ul {
+  list-style: none;
+  padding-inline-start: 0;
+  padding: 1rem;
+  padding-top: 0;
+  width: calc(60% - 1rem);
+  margin: 0;
+}
+
+.cartContainer ul li:not(:last-child) {
+  margin-bottom: 0.625rem;
+  padding-bottom: 0;
+}
+
+@media (max-width: 568px) {
+  .cartContainer {
+    flex-direction: column;
+  }
+
+  .cartContainer ul {
+    width: 90%;
+    margin: auto;
+  }
+}

@@ -1,0 +1,133 @@
+.demandSections {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+.demandTitle {
+  font-family: Gotham;
+  font-size: 56px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+.leftSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.categoryCard {
+  position: relative;
+  margin: 1em;
+  padding: 0;
+  display: inline-block;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.horizontalCard {
+  width: 30rem;
+  height: 15rem;
+}
+
+.tShirt {
+  background-image: url("./../../../assets/Tshirt-design.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jeans {
+  background-image: url("./../../../assets/jeans.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+
+.accessories {
+  background-image: url("./../../../assets/accessories.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.backpack {
+  background-image: url("./../../../assets/backpack.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.verticalCard {
+  width: 15rem;
+  height: 32rem;
+}
+
+.cardFooter {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2vh;
+  padding: 1em 2em;
+  font-size: 1.5rem;
+  text-align: left;
+  z-index: 1;
+  color: white;
+}
+
+.cardFooter::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  opacity: .4;
+  z-index: -1;
+  padding: 1em 2em;
+  content: "";
+  background-image: linear-gradient(
+84deg
+,#000 4%,rgba(0,0,0,.5));
+}
+
+@media (max-width: 1090px) {
+
+  .demandSections, .rightSection {
+    flex-direction: column;
+  }
+
+  .verticalCard {
+    width: 30rem;
+    height: 15rem;
+  }
+}
+
+@media (max-width: 504px) {
+  .verticalCard, .horizontalCard {
+    width: 20rem;
+  }
+
+  .demandTitle {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 360px) {
+  .verticalCard, .horizontalCard {
+    width: 15rem;
+  }
+}

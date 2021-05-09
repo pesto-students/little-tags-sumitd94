@@ -59,3 +59,20 @@ Use `https://fakestoreapi.com/products` to fetch products.
 - React Router
 
 **NOTE: React Component libraries like Material UI, Antd, Chakra UI are not allowed**
+
+## Folder Structure
+
+- Non-feature code that can be shared across different parts of the app (\_actions, \_constants, \_helpers, \_reducers, \_services)
+- Prefixed non-feature folders with an underscore "\_" to group them together and make it easy to distinguish between features and non-features,
+- The index.js files in each folder are barrel files that group all the exported modules together so they can be imported using the folder path instead of the full module path and to enable importing multiple modules in a single import (e.g. import { userActions, alertActions } from '../\_actions')
+- The \_actions folder contains all the Redux action creators for the project
+- The \_constants folder contains all of the redux action type constants used by redux action creators and reducers
+- The helpers folder contains all the bits and pieces that don't fit into other folders but don't justify having a folder of their own.
+
+## Features RoadMap
+
+- Integrate Payment methods
+- Improve Past Orders screen
+- make moibile responsive
+- Connect the store with backend
+- Product reviews section

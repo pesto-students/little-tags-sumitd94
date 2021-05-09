@@ -1,0 +1,66 @@
+.CartValueContainer {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  border-left: 1px solid #e9e9eb;
+  padding: 1rem;
+  text-align: left;
+}
+
+.CartValueContainer button {
+  width: 100%;
+}
+
+.coupon {
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.couponsBtn {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 1.25rem 0;
+  border-radius: 0.3rem;
+  background-color: transparent;
+  border: 1px solid #d8d8da;
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  color: #696b79;
+}
+
+.btnIcon {
+  padding-right: 0.625rem;
+}
+
+.checkoutDetails {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: .875rem;
+}
+
+.priceDetails {
+  margin: 0.625rem 0;
+  line-height: 1.5;
+  font-weight: 700;
+  font-size: .875rem;
+}
+
+.title {
+  width: 70%;
+}
+
+.value {
+  width: 30%;
+}
+
+@media (max-width: 568px) {
+  .CartValueContainer {
+    width: 90%;
+    margin: auto;
+  }
+}

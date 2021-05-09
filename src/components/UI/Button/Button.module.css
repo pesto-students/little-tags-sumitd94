@@ -1,0 +1,9 @@
+.littleTagButton {
+  background-color: black;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin: 16px 0;
+  cursor: pointer;
+  width: 164px;
+}

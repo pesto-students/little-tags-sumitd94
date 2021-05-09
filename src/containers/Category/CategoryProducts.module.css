@@ -1,0 +1,29 @@
+.productLists {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  width: 80%;
+  margin: auto;
+}
+
+.headingText span {
+  font-weight: 300;
+}
+
+@media (max-width: 868px) {
+  .productLists {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .productLists {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .productLists {
+    grid-template-columns: 1fr;
+  }
+}

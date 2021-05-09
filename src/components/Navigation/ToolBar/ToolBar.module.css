@@ -1,0 +1,151 @@
+.navBar {
+  display: flex;
+  background: black;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.625rem 1rem;
+  min-height: 10vh;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 3;
+  box-sizing: border-box;
+}
+
+.navSection {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin: 0 1rem;
+  font-size: 2rem;
+}
+
+.menuItems {
+  list-style: none;
+  display: flex;
+  padding: 0 1rem;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.menuItem {
+  margin-right: 1.5rem;
+}
+
+.linkNoStyle {
+  text-decoration: none;
+  color: white;
+  text-align: left;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.menuLinkStyle {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  text-align: left;
+}
+
+.activeLink {
+  color: yellow;
+}
+
+.navIconsLists {
+  list-style: none;
+  display: flex;
+  padding: 0 1rem;
+  justify-self: right;
+  width: 50%;
+}
+
+.navIconsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.navIconsList:not(:last-of-type) {
+  margin-right: 1.5rem;
+}
+
+.navIconsList a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navIcon {
+  width: 1.2rem;
+  height: 1.2rem;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.navIconText {
+  font-size: 0.75rem;
+  margin-top: 4px;
+}
+
+.iconNumber {
+  background-color: red;
+  border: none;
+  right: -1rem;
+  top: -0.7rem;
+  height: 1.25rem;
+  min-width: 1.25rem;
+  padding: 2px;
+  border-radius: 50%;
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  font-size: 0.75em;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+
+  .navBar {
+    padding: .8rem .8rem 3.5rem 0;
+  }
+
+  .navSection {
+    width: auto;
+  }
+
+  .navIconText {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .menuItems {
+    display: none;
+  }
+}
+
+@media (max-width: 398px) {
+  .logo {
+    font-size: 1.5rem;
+    margin-right: 0;
+  }
+
+  .navIconsLists > li:first-child {
+    display: none;
+  }
+}
+
+@media (max-width: 286px) {
+  .logo {
+    font-size: 1.3rem;
+  }
+}
