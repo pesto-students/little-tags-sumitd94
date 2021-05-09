@@ -5,13 +5,13 @@ const {
 } = CART_CONSTANTS;
 
 const initialState = {
-  allCarts: [],
+  cartDetails: [],
 };
 
 function removeFromCart(allCart, pid) {
-  const newCart = { allCarts: [] };
+  const newCart = { cartDetails: [] };
   if (allCart.length > 0) {
-    newCart.allCarts.filter((productid) => productid !== pid);
+    newCart.cartDetails.filter((productid) => productid !== pid);
   }
   return newCart;
 }
@@ -19,13 +19,13 @@ function removeFromCart(allCart, pid) {
 function reducer(state = initialState, action) {
   switch (action.type) {
     case ADDCART:
-      return { allCarts: [...state.allCarts, action.cartdetails] };
+      return { cartDetails: [...state.cartDetails, action.cartdetails] };
     case UPDATECART:
-      return { allCarts: action.cartdetails };
+      return { cartDetails: action.cartdetails };
     case REMOVECART:
-      return removeFromCart(state.allCarts, action.productid);
+      return removeFromCart(state.cartDetails, action.productid);
     case CLEARCART:
-      return { allCarts: [] };
+      return { cartDetails: [] };
     default:
       return state;
   }

@@ -8,7 +8,7 @@ import Button from '../../UI/Button/Button';
 const Payment = ({ history }) => {
   const dispatch = useDispatch();
   const { deliveryAddress } = useSelector((state) => state.address);
-  const cartDetails = useSelector((state) => state.cart.allCarts);
+  const { cartDetails } = useSelector((state) => state.cart);
   const proceedHandler = () => {
     dispatch(orderActions.orderNow(cartDetails));
     history.push('/thank-you');

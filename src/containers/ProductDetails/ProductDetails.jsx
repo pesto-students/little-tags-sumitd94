@@ -42,9 +42,9 @@ const ProductDetails = () => {
     if (quantity > 0) {
       dispatch(cartActions.addToCart({
         quantity,
-        productid: productData[0].id,
-        productData,
         size,
+        categoryname,
+        ...productData[0],
       }));
     } else {
       dispatch(alertActions.error('Please Select Quantity of the Item'));

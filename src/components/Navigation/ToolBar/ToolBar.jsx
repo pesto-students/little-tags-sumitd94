@@ -9,7 +9,7 @@ import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
 
 const ToolBar = ({ drawerToggleClicked, toggleModalHandler }) => {
   const userDetails = useSelector((state) => state.authentication);
-  const cart = useSelector((state) => state.cart);
+  const { cartDetails } = useSelector((state) => state.cart);
 
   const { loggedIn, user } = userDetails;
 
@@ -41,14 +41,6 @@ const ToolBar = ({ drawerToggleClicked, toggleModalHandler }) => {
         <SearchBar />
         <ul className={classNames.navIconsLists}>
           <li className={classNames.navIconsList}>
-            {/* <Link to="/profile" className={classNames.linkNoStyle}>
-              <span className={classNames.navIcon}>
-                <i className="fas fa-user" />
-              </span>
-              <span className={classNames.navIconText}>
-                {loggedIn ? `Hi, ${user.displayName.split(' ')[0]}` : 'Login'}
-              </span>
-            </Link> */}
             <a href="#" className={classNames.linkNoStyle} onClick={loggedIn ? () => {} : toggleModalHandler}>
               <span className={classNames.navIcon}>
                 <i className="fas fa-user" />
@@ -82,7 +74,7 @@ const ToolBar = ({ drawerToggleClicked, toggleModalHandler }) => {
                   className={classNames.iconNumber}
                   style={{ display: loggedIn ? 'flex' : 'none' }}
                 >
-                  {cart?.allCarts?.length}
+                  {cartDetails?.length}
                 </span>
               </span>
               <span className={classNames.navIconText}>Cart</span>
